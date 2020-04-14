@@ -1,0 +1,11 @@
+{
+  "name": "keep-learning",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:tolerance-go/keep-learning.git",
+  "author": "yarnb <yarnbcoder@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  }
+}

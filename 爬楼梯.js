@@ -1,3 +1,4 @@
+const { assert } = require("./utils");
 /**
 1.爬楼梯
 
@@ -52,4 +53,4 @@ const climbStairs = (n) => {
   return dp[n - 1];
 };
 
-console.log(climbStairs(20));
+module.exports = climbStairs;

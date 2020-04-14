@@ -7,9 +7,23 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "两数之和",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/两数之和.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "爬楼梯",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/爬楼梯.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "正则表达式匹配",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/正则表达式匹配.js"
     }
   ]
 }                                                                                                                     |

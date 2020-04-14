@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`addTwoNumbers 1`] = `
+ListNode {
+  "next": ListNode {
+    "next": ListNode {
+      "next": null,
+      "val": 8,
+    },
+    "val": 0,
+  },
+  "val": 7,
+}
+`;
