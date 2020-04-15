@@ -1,4 +1,4 @@
-const { assert } = require("./utils");
+const { assert } = require("../utils");
 /**
 1.爬楼梯
 

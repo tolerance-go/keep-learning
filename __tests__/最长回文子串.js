@@ -1,4 +1,4 @@
-const longestPalindrome = require("../最长回文子串");
+const longestPalindrome = require("../src/最长回文子串");
 
 test(`longestPalindrome`, () => {
   expect(longestPalindrome("babad")).toBe("aba");

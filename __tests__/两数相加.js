@@ -1,4 +1,4 @@
-const { ListNode, addTwoNumbers } = require("../两数相加");
+const { ListNode, addTwoNumbers } = require("../src/两数相加");
 
 test("addTwoNumbers", () => {
   const l1_1 = new ListNode(2);

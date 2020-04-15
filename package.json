@@ -6,6 +6,15 @@
   "author": "yarnb <yarnbcoder@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "node ./scripts/generateReadme.js"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && npm run build"
+    }
   }
 }
