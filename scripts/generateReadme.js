@@ -51,8 +51,9 @@ const writeReadme = () => {
       }
       fs.writeFileSync(
         paths.readme,
-        `${"  ".repeat(level)}- [${file}](${path.join(
-          "https://github.com/tolerance-go/keep-learning/blob/master/src",
+        `${"  ".repeat(
+          level
+        )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/master/src/${path.join(
           parents,
           node[file].base
         )})\n`,
