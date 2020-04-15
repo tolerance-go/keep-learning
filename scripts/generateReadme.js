@@ -40,22 +40,22 @@ const readSrc = (folder = paths.src, node = tree) => {
 const writeReadme = () => {
   fs.writeFileSync(paths.readme, `# keep-learning\n\n`, { flag: "w" });
 
-  const eachTree = (node, level = 0) => {
+  const eachTree = (node, parents = "", level = 0) => {
     for (let file in node) {
       if (file === folderFlag) continue;
 
       if (typeof node[file] === "object" && node[file][folderFlag]) {
         fs.writeFileSync(paths.readme, `- ${file}\n`, { flag: "a" });
-        eachTree(node[file], level + 1);
+        eachTree(node[file], path.join(parents, file), level + 1);
         continue;
       }
       fs.writeFileSync(
         paths.readme,
-        `${"  ".repeat(
-          level
-        )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/master/${
+        `${"  ".repeat(level)}- [${file}](${path.join(
+          "https://github.com/tolerance-go/keep-learning/blob/master/src",
+          parents,
           node[file].base
-        })\n`,
+        )})\n`,
         {
           flag: "a",
         }
