@@ -45,7 +45,9 @@ const writeReadme = () => {
       if (file === folderFlag) continue;
 
       if (typeof node[file] === "object" && node[file][folderFlag]) {
-        fs.writeFileSync(paths.readme, `- ${file}\n`, { flag: "a" });
+        fs.writeFileSync(paths.readme, `${"  ".repeat(level)}- ${file}\n`, {
+          flag: "a",
+        });
         eachTree(node[file], path.join(parents, file), level + 1);
         continue;
       }

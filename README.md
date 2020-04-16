@@ -4,13 +4,13 @@
   - [Z字形变换](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/Z字形变换.js)
   - [两数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/两数之和.js)
   - [两数相加](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/两数相加.js)
-- 分治
+  - 分治
     - [合并K个排序链表](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/分治/合并K个排序链表.js)
   - [删除链表的倒数第N个节点](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/删除链表的倒数第N个节点.js)
-- 动态规划
+  - 动态规划
     - [正则表达式匹配](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/正则表达式匹配.js)
     - [爬楼梯](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/爬楼梯.js)
-- 双指针
+  - 双指针
     - [三数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/双指针/三数之和.js)
     - [删除排序数组中的重复项](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/双指针/删除排序数组中的重复项.js)
     - [四数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/双指针/四数之和.js)
@@ -28,7 +28,7 @@
   - [有效的括号](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/有效的括号.js)
   - [盛最多水的容器](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/盛最多水的容器.js)
   - [罗马数字转整数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/罗马数字转整数.js)
-- 递归
+  - 递归
     - [K个一组翻转链表](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/递归/K个一组翻转链表.js)
     - [两两交换链表中的节点](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/递归/两两交换链表中的节点.js)
     - [合并两个有序链表](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/递归/合并两个有序链表.js)
