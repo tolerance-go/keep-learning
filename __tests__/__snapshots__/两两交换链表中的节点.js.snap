@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`swapPairs 1`] = `
+ListNode {
+  "next": ListNode {
+    "next": null,
+    "val": 3,
+  },
+  "val": 1,
+}
+`;

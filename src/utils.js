@@ -10,4 +10,20 @@ const delay = (time) => {
   });
 };
 
-module.exports = { delay };
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
+const getNodeList = (nums) => {
+  const getNode = (nums) => {
+    if (nums.length === 0) return null;
+    const [num] = nums.slice(0, 1);
+    const node = new ListNode(num);
+    node.next = getNode(nums.slice(1));
+    return node;
+  };
+  return getNode(nums);
+};
+
+module.exports = { delay, ListNode, getNodeList };

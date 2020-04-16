@@ -1,3 +1,4 @@
+const { ListNode } = require("./utils");
 /**
  * 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
 
@@ -17,10 +18,10 @@
  */
 
 // Definition for singly-linked list.
-function ListNode(val) {
-  this.val = val;
-  this.next = null;
-}
+// function ListNode(val) {
+//   this.val = val;
+//   this.next = null;
+// }
 
 /**
  * 两条链有长有短，如果不齐，则补0
@@ -53,7 +54,4 @@ var addTwoNumbers = function (_l1, _l2) {
   return getNextNode(_l1, _l2, 0);
 };
 
-module.exports = {
-  addTwoNumbers,
-  ListNode,
-};
+module.exports = addTwoNumbers;
