@@ -1,4 +1,4 @@
-const addTwoNumbers = require("../src/两数相加");
+const addTwoNumbers = require("../src/算法/两数相加");
 const { getNodeList } = require("../src/utils");
 
 test("addTwoNumbers", () => {

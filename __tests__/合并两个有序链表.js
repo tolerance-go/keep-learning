@@ -1,4 +1,4 @@
-const mergeTwoLists = require("../src/递归/合并两个有序链表");
+const mergeTwoLists = require("../src/算法/递归/合并两个有序链表");
 const { getNodeList } = require("../src/utils");
 
 test(`mergeTwoLists([1, 2, 4], [1, 3, 4])`, () => {

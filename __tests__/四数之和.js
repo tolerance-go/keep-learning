@@ -1,4 +1,4 @@
-const fourSum = require("../src/双指针/四数之和");
+const fourSum = require("../src/算法/双指针/四数之和");
 
 test("fourSum([-3,-2,-1,0,0,1,2,3], 0)", () => {
   expect(fourSum([-3, -2, -1, 0, 0, 1, 2, 3], 0)).toStrictEqual([

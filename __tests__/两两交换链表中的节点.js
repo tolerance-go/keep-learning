@@ -1,4 +1,4 @@
-const swapPairs = require("../src/递归/两两交换链表中的节点");
+const swapPairs = require("../src/算法/递归/两两交换链表中的节点");
 const { getNodeList } = require("../src/utils");
 
 test("swapPairs", () => {

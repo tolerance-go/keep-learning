@@ -1,4 +1,4 @@
-const climbStairs = require("../src/动态规划/爬楼梯");
+const climbStairs = require("../src/算法/动态规划/爬楼梯");
 
 test("climbStairs(20)", () => {
   expect(climbStairs(20)).toStrictEqual(10946);

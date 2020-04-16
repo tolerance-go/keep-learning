@@ -1,4 +1,4 @@
-const reverseKGroup = require("../src/递归/K个一组翻转链表");
+const reverseKGroup = require("../src/算法/递归/K个一组翻转链表");
 const { getNodeList } = require("../src/utils");
 
 test(`reverseKGroup([1,2,3,4,5], 2)`, () => {

@@ -27,7 +27,7 @@ k 是一个正整数，它的值小于或等于链表的长度。
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-const { ListNode } = require("../utils");
+const { ListNode } = require("../../utils");
 
 /**
  * Definition for singly-linked list.
