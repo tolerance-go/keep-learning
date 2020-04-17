@@ -21,23 +21,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "两数之和",
+      "name": "组合总和2",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/两数之和.js"
+      "program": "${workspaceFolder}/src/算法/组合总和2.js"
     },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "爬楼梯",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/爬楼梯.js"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "正则表达式匹配",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/正则表达式匹配.js"
-    }
   ]
 }                                                                                                                     |
