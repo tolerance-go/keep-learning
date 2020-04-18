@@ -36,40 +36,30 @@ candidates 中的数字可以无限制重复被选取。
  * @return {number[][]}
  */
 var combinationSum = function (candidates, target) {
-  /**
-   * @param candidates 数组输入
-   * @param len        输入数组的长度，冗余变量
-   * @param residue    剩余数值
-   * @param begin      本轮搜索的起点下标
-   * @param path       从根结点到任意结点的路径
-   * @param res        结果集变量
-   */
-  const dfs = (candidates, len, residue, begin, path, res) => {
-    if (residue == 0) {
-      // 由于 path 全局只使用一份，到叶子结点的时候需要做一个拷贝
+  const dfs = (candidates, residue, begin, path, res) => {
+    if (residue === 0) {
       res.push([...path]);
-      return;
     }
 
-    for (let i = begin; i < len; i++) {
-      // 在数组有序的前提下，剪枝
+    for (let i = begin; i < candidates.length; i++) {
+      // 前提是排过序
+      // 如果剩余的数小于0，那么后面的数字也不会作为其加数了
       if (residue - candidates[i] < 0) {
         break;
       }
 
       path.push(candidates[i]);
-      dfs(candidates, len, residue - candidates[i], i, path, res);
+      dfs(candidates, residue - candidates[i], i, path, res);
       path.pop();
     }
   };
 
   let res = [];
-  let len = candidates.length;
 
-  // 排序是为了提前终止搜索
   candidates.sort((a, b) => a - b);
 
-  dfs(candidates, len, target, 0, [], res);
+  dfs(candidates, target, 0, [], res);
+
   return res;
 };
 
