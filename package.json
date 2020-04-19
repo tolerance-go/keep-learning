@@ -9,7 +9,7 @@
     "test": "jest",
     "test:components": "start-storybook",
     "build": "node ./scripts/generateReadme.js",
-    "build:components": "build-storybook"
+    "build:components": "build-storybook -o docs"
   },
   "lint-staged": {
     "*.{md,json}": [
