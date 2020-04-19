@@ -1,13 +1,14 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 const cwd = process.cwd();
-const folderFlag = "folder";
+const folderFlag = 'folder';
 
 const paths = {
-  src: path.join(cwd, "src"),
-  utils: path.join(cwd, "src/utils.js"),
-  readme: path.join(cwd, "README.md"),
+  src: path.join(cwd, 'src'),
+  utils: path.join(cwd, 'src/utils.js'),
+  readme: path.join(cwd, 'README.md'),
+  readmeHead: path.join(cwd, 'README-HEAD.md'),
 };
 
 const tree = {};
@@ -38,30 +39,32 @@ const readSrc = (folder = paths.src, node = tree) => {
 };
 
 const writeReadme = () => {
-  fs.writeFileSync(paths.readme, `# keep-learning\n\n`, { flag: "w" });
+  fs.writeFileSync(paths.readme, fs.readFileSync(paths.readmeHead) + '\n', {
+    flag: 'w',
+  });
 
-  const eachTree = (node, parents = "", level = 0) => {
+  const eachTree = (node, parents = '', level = 0) => {
     for (let file in node) {
       if (file === folderFlag) continue;
 
-      if (typeof node[file] === "object" && node[file][folderFlag]) {
-        fs.writeFileSync(paths.readme, `${"  ".repeat(level)}- ${file}\n`, {
-          flag: "a",
+      if (typeof node[file] === 'object' && node[file][folderFlag]) {
+        fs.writeFileSync(paths.readme, `${'  '.repeat(level)}- ${file}\n`, {
+          flag: 'a',
         });
         eachTree(node[file], path.join(parents, file), level + 1);
         continue;
       }
       fs.writeFileSync(
         paths.readme,
-        `${"  ".repeat(
-          level
+        `${'  '.repeat(
+          level,
         )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/master/src/${path.join(
           parents,
-          node[file].base
+          node[file].base,
         )})\n`,
         {
-          flag: "a",
-        }
+          flag: 'a',
+        },
       );
     }
   };
