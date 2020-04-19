@@ -28,6 +28,15 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "changelog": {
+    "labels": {
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "documentation": ":book: Documentation",
+      "dependency": ":deciduous_tree: Dependency",
+      "chore": ":turtle: Chore"
+    }
+  },
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
