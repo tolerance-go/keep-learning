@@ -2,6 +2,7 @@
 
 - 前端
   - CSS
+    - [水平垂直居中布局的方式](https://github.com/tolerance-go/keep-learning/blob/master/src/前端/CSS/水平垂直居中布局的方式.md)
   - JS
     - [继承](https://github.com/tolerance-go/keep-learning/blob/master/src/前端/JS/继承.md)
   - babel
@@ -29,6 +30,8 @@
     - [合并K个排序链表](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/分治/合并K个排序链表.js)
   - [删除链表的倒数第N个节点](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/删除链表的倒数第N个节点.js)
   - 动态规划
+    - [凑零钱](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/凑零钱.js)
+    - [斐波那契数列](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/斐波那契数列.js)
     - [正则表达式匹配](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/正则表达式匹配.js)
     - [爬楼梯](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/爬楼梯.js)
   - 双指针
