@@ -1,0 +1,14 @@
+**/node_modules/**
+
+# fixtures
+**/fixtures/**
+
+# templates
+**/templates/**
+
+# docs
+**/*.md
+
+# coverage
+/coverage
+/dist

@@ -21,9 +21,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "组合总和2",
+      "name": "test",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/src/算法/组合总和2.js"
+      "program": "${workspaceFolder}/src/算法/test.js"
     },
   ]
 }                                                                                                                     |

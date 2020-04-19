@@ -70,10 +70,10 @@ var isValidSudoku = function (board) {
     boxes[i] = new Map();
   }
 
-  for (r = 0; r < 9; r++) {
-    for (c = 0; c < 9; c++) {
+  for (let r = 0; r < 9; r++) {
+    for (let c = 0; c < 9; c++) {
       const num = board[r][c];
-      if (num === ".") continue;
+      if (num === '.') continue;
 
       const rn = rows[r].get(num) || 0;
       rows[r].set(num, rn + 1);
