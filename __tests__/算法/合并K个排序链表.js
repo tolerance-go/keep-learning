@@ -1,5 +1,5 @@
-const mergeKLists = require("../../src/算法/分治/合并K个排序链表");
-const { getNodeList } = require("../../src/utils");
+const mergeKLists = require('../../src/算法/分治/合并K个排序链表');
+const { getNodeList } = require('../../utils/utils');
 
 test(`mergeKLists([1, 2, 4], [1, 3, 4])`, () => {
   expect(
@@ -7,6 +7,6 @@ test(`mergeKLists([1, 2, 4], [1, 3, 4])`, () => {
       getNodeList([1, 4, 5]),
       getNodeList([1, 3, 4]),
       getNodeList([2, 6]),
-    ])
+    ]),
   ).toStrictEqual(getNodeList([1, 1, 2, 3, 4, 4, 5, 6]));
 });
