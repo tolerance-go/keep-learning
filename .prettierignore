@@ -6,9 +6,6 @@
 # templates
 **/templates/**
 
-# docs
-**/*.md
-
 # coverage
 /coverage
 /dist

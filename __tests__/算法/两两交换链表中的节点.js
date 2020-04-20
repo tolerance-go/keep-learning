@@ -1,8 +1,8 @@
-const swapPairs = require("../../src/算法/递归/两两交换链表中的节点");
-const { getNodeList } = require("../../src/utils");
+const swapPairs = require('../../src/算法/递归/两两交换链表中的节点');
+const { getNodeList } = require('../../utils/utils');
 
-test("swapPairs", () => {
+test('swapPairs', () => {
   expect(
-    swapPairs(getNodeList([1, 2, 3, 4]), getNodeList([2, 1, 4, 3]))
+    swapPairs(getNodeList([1, 2, 3, 4]), getNodeList([2, 1, 4, 3])),
   ).toMatchSnapshot();
 });

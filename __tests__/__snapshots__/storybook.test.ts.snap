@@ -1,22 +1,298 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots button With Emoji 1`] = `
-<div
-  size="small"
->
-  <span
-    aria-label="so cool"
-    role="img"
+exports[`Storyshots 垂直居中布局的方式 Absolute Margin 1`] = `
+Array [
+  <div
+    className="sc-fzoLag kPJLWC"
   >
-    😀 😎 👍 💯
-  </span>
-</div>
+    <img
+      className="sc-fzoXzr hpOlCA"
+      src="RelativeImageStub"
+    />
+  </div>,
+  <br />,
+  <h2>
+    单行截断显示，无法直接居中
+  </h2>,
+  <div
+    className="sc-fzoLag kPJLWC"
+  >
+    <span
+      className="sc-fzpjYC eSMkNU"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+  <br />,
+  <div
+    className="sc-fzoLag kPJLWC"
+  >
+    <span
+      className="sc-fznxsB enyaFr"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+]
 `;
 
-exports[`Storyshots button With Text 1`] = `
-<div
-  size="small"
->
-  Hello Button
-</div>
+exports[`Storyshots 垂直居中布局的方式 Absolute Margin 2 1`] = `
+Array [
+  <div
+    className="sc-fznJRM ttzdg"
+  >
+    <img
+      className="sc-fznWqX cHFasS"
+      src="RelativeImageStub"
+    />
+  </div>,
+  <br />,
+  <h2>
+    单行截断显示，无法直接居中
+  </h2>,
+  <div
+    className="sc-fznJRM ttzdg"
+  >
+    <span
+      className="sc-fzoiQi xTyyf"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+  <br />,
+  <div
+    className="sc-fznJRM ttzdg"
+  >
+    <span
+      className="sc-fzqARJ euxmZq"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+]
+`;
+
+exports[`Storyshots 垂直居中布局的方式 Absolute Transform 1`] = `
+Array [
+  <div
+    className="sc-fzqNqU jqMdwQ"
+  >
+    <img
+      className="sc-fzoyTs IxUyS"
+      src="RelativeImageStub"
+    />
+  </div>,
+  <br />,
+  <h2>
+    单行截断显示，无法直接居中
+  </h2>,
+  <div
+    className="sc-fzqNqU jqMdwQ"
+  >
+    <span
+      className="sc-fzoNJl gnnTFe"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+  <br />,
+  <div
+    className="sc-fzqNqU jqMdwQ"
+  >
+    <span
+      className="sc-fzoXWK diyKoS"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+]
+`;
+
+exports[`Storyshots 垂直居中布局的方式 Flex 1`] = `
+Array [
+  <div
+    className="sc-AxjAm kNvuqg"
+  >
+    <img
+      className="sc-AxirZ gVlUrS"
+      src="RelativeImageStub"
+    />
+  </div>,
+  <br />,
+  <div
+    className="sc-AxjAm kNvuqg"
+  >
+    <span
+      className="sc-AxhCb dKTzWe"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+  <br />,
+  <div
+    className="sc-AxjAm kNvuqg"
+  >
+    <span
+      className="sc-AxiKw iDLVDS"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+  <br />,
+  <div
+    className="sc-AxjAm kNvuqg"
+  >
+    <div
+      className="sc-AxhUy knXQim"
+    >
+      <span
+        className="sc-AxhCb jsWuiX"
+      >
+        文本文本文本文本文本文本文本文本文本文本文本文本文本
+      </span>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots 垂直居中布局的方式 Line Height And Vertical Align 1`] = `
+Array [
+  <div
+    className="sc-AxgMl fkiSoJ"
+  >
+    <img
+      className="sc-AxheI dZUzrj"
+      src="RelativeImageStub"
+    />
+  </div>,
+  <br />,
+  <div
+    className="sc-AxgMl fkiSoJ"
+  >
+    <span
+      className="sc-Axmtr hBVTto"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+  <br />,
+  <div
+    className="sc-AxgMl fkiSoJ"
+  >
+    <span
+      className="sc-AxmLO gRtxEv"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+]
+`;
+
+exports[`Storyshots 垂直居中布局的方式 Table Cell 1`] = `
+Array [
+  <div
+    className="sc-fznZeY hQgQtU"
+  >
+    <img
+      className="sc-fzokOt kVKUyZ"
+      src="RelativeImageStub"
+    />
+  </div>,
+  <br />,
+  <div
+    className="sc-fznZeY hQgQtU"
+  >
+    <span
+      className="sc-fzqBZW AGfGE"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+  <br />,
+  <div
+    className="sc-fznZeY hQgQtU"
+  >
+    <span
+      className="sc-fzqNJr gZMUHl"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+  </div>,
+  <br />,
+  <div
+    className="sc-fznZeY hQgQtU"
+  >
+    <div
+      className="sc-fzoyAV iNTFvc"
+    >
+      <span
+        className="sc-fzqNJr cDCLfM"
+      >
+        文本文本文本文本文本文本文本文本文本文本文本文本文本
+      </span>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots 垂直居中布局的方式 Vertical Align 1`] = `
+Array [
+  <div
+    className="sc-fzozJi jqEwva"
+  >
+    <img
+      className="sc-fzoLsD eWWnwq"
+      src="RelativeImageStub"
+    />
+  </div>,
+  <br />,
+  <div
+    className="sc-fzozJi jqEwva"
+  >
+    <span
+      className="sc-fzplWN hDGaYn"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+    <span
+      className="sc-fzpans hVpmSk"
+    />
+  </div>,
+  <br />,
+  <div
+    className="sc-fzozJi jqEwva"
+  >
+    <span
+      className="sc-fznyAO bqiHoz"
+    >
+      文本文本文本文本文本文本文本文本文本文本文本文本文本
+    </span>
+    <span
+      className="sc-fzpans hVpmSk"
+    />
+  </div>,
+  <br />,
+  <h2>
+    同样方法用于包装元素失效
+  </h2>,
+  <div
+    className="sc-fzozJi jqEwva"
+  >
+    <div
+      className="sc-fznKkj hxvtOY"
+    >
+      <span
+        className="sc-fznyAO blzKGK"
+      >
+        文本文本文本文本文本文本文本文本文本文本文本文本文本
+      </span>
+      <span
+        className="sc-fzpans hVpmSk"
+      />
+    </div>
+    <span
+      className="sc-fzpans hVpmSk"
+    />
+  </div>,
+]
 `;
