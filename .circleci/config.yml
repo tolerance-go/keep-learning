@@ -23,7 +23,13 @@ jobs:
       - run:
           name: Build All
           command: yarn build && yarn build:components
+          filters:
+            branches:
+              only:
+                - master
       - deploy:
+          requires:
+            - Build All
           name: Deploy
           command: |
             git config credential.helper 'cache --timeout=120'
