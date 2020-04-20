@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  setup:
     docker:
       - image: circleci/node:lts
     steps:
@@ -17,16 +17,25 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+
+  test:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
       - run:
           name: Test
           command: yarn test
+
+  build:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
       - run:
           name: Build All
           command: yarn build && yarn build:components
-          filters:
-            branches:
-              only:
-                - master
+
   deploy:
     docker:
       - image: circleci/node:lts
@@ -46,7 +55,13 @@ workflows:
   version: 2.1
   default:
     jobs:
+      - setup
+      - test:
+          requires:
+            - setup
       - build:
+          requires:
+            - test
           filters:
             branches:
               only:
