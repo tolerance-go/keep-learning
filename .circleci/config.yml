@@ -27,17 +27,34 @@ jobs:
             branches:
               only:
                 - master
-      - deploy:
-          requires:
-            - Build All
+  deploy:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run:
           name: Deploy
           command: |
             git config credential.helper 'cache --timeout=120'
-            git config user.email "${GITHUB_EMAIL}"
-            git config user.name "${GITHUB_USERNAME}"
+            git config user.email "$GITHUB_EMAIL"
+            git config user.name "$GITHUB_USERNAME"
             git add .
             git commit -m "docs: via CircleCI build"
-            git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/tolerance-go/keep-learning.git master
+            git push -q https://$GITHUB_PERSONAL_TOKEN@github.com/tolerance-go/keep-learning.git master
+
+workflows:
+  version: 2.1
+  default:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+      - deploy:
+          context: GITHUB_TOKEN
+          requires:
+            - build
           filters:
             branches:
               only:
