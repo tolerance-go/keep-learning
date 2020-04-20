@@ -23,3 +23,16 @@ jobs:
       - run:
           name: Build All
           command: yarn build && yarn build:components
+      - deploy:
+          name: Deploy
+          command: |
+            git config credential.helper 'cache --timeout=120'
+            git config user.email "${GITHUB_EMAIL}"
+            git config user.name "${GITHUB_USERNAME}"
+            git add .
+            git commit -m "docs: via CircleCI build"
+            git push -q https://${GITHUB_PERSONAL_TOKEN}@github.com/tolerance-go/keep-learning.git master
+          filters:
+            branches:
+              only:
+                - master
