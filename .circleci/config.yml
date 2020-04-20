@@ -87,6 +87,8 @@ workflows:
             branches:
               only:
                 - master
+            tags:
+              only: /^v.*/
       - deploy:
           context: GITHUB_TOKEN
           requires:
@@ -95,3 +97,5 @@ workflows:
             branches:
               only:
                 - master
+            tags:
+              only: /^v.*/
