@@ -84,9 +84,6 @@ workflows:
           requires:
             - test
           filters:
-            branches:
-              only:
-                - master
             tags:
               only: /^v.*/
       - deploy:
@@ -94,8 +91,5 @@ workflows:
           requires:
             - build
           filters:
-            branches:
-              only:
-                - master
             tags:
               only: /^v.*/
