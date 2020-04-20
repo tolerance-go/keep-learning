@@ -84,6 +84,7 @@ workflows:
           requires:
             - test
           filters:
+            # commit，tag 是没有分支概念的，branches 和 tags 是以 或 的取值方式作用的
             branches:
               ignore: /.*/
             tags:
