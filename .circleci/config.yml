@@ -1,17 +1,24 @@
 version: 2.1
+
+aliases:
+  - &restore_yarn_cache
+    restore_cache:
+      name: Restore Node_modules Cache
+      keys:
+        - yarn-packages-{{ checksum "yarn.lock" }}
+  - &run_yarn
+    run:
+      name: Install Packages
+      command: yarn --frozen-lockfile
+
 jobs:
   setup:
     docker:
       - image: circleci/node:lts
     steps:
       - checkout
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
+      - *restore_yarn_cache
+      - *run_yarn
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -23,6 +30,8 @@ jobs:
       - image: circleci/node:lts
     steps:
       - checkout
+      - *restore_yarn_cache
+      - *run_yarn
       - run:
           name: Test
           command: yarn test
@@ -32,15 +41,27 @@ jobs:
       - image: circleci/node:lts
     steps:
       - checkout
+      - *restore_yarn_cache
+      - *run_yarn
       - run:
           name: Build All
           command: yarn build && yarn build:components
+      - save_cache:
+          name: Save Build Cache
+          key: build-cache
+          paths:
+            - ./components-square
+            - ./README.md
 
   deploy:
     docker:
       - image: circleci/node:lts
     steps:
       - checkout
+      - restore_cache:
+          name: Restore Build Cache
+          keys:
+            - build-cache
       - run:
           name: Deploy
           command: |
