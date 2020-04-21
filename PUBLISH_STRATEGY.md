@@ -30,3 +30,7 @@ develop 从 master 切出后，永不回去，也就是只有 develop 向 master
 4. 推送 master 到远程即可；ci 接收到有 tag 信息的 commit 后，会触发构建，提交一个 commit 把构建产物推送到 repo
 
 如果要回溯版本，将当前 commit 重置到上一个 tag 对应的 commit 即可
+
+## 版本规范
+
+版本号语义规范严格遵循 [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/)
