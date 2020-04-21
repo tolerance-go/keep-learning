@@ -11,7 +11,7 @@ const paths = {
   src: path.join(cwd, 'src'),
   utils: path.join(cwd, 'src/utils.js'),
   readme: path.join(cwd, 'README.md'),
-  readmeHead: path.join(cwd, 'README-HEAD.md'),
+  readmeHead: path.join(cwd, 'README_HEAD.md'),
 };
 
 const tree = {};
