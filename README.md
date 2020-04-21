@@ -21,6 +21,7 @@
   - 最佳实践
     - [如何实现无限滚动](https://github.com/tolerance-go/keep-learning/blob/master/src/前端/最佳实践/如何实现无限滚动.md)
 - 算法
+  - [Pow(x, n)](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/Pow(x, n).ts)
   - [Z字形变换](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/Z字形变换.js)
   - [下一个排列](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/下一个排列.js)
   - [两数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/两数之和.js)
@@ -45,8 +46,12 @@
     - [最接近的三数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/双指针/最接近的三数之和.js)
     - [移除元素](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/双指针/移除元素.js)
   - [回文数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/回文数.js)
+  - 回溯
+    - [全排列](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/回溯/全排列.ts)
+    - [全排列2](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/回溯/全排列2.ts)
   - [在排序数组中查找元素的第一个和最后一个位置](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/在排序数组中查找元素的第一个和最后一个位置.js)
   - [外观数列](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/外观数列.js)
+  - [字母异位词分组](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/字母异位词分组.ts)
   - [字符串相乘](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/字符串相乘.ts)
   - [字符串转换整数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/字符串转换整数.js)
   - [实现strStr()](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/实现strStr().js)
@@ -55,6 +60,7 @@
   - [搜索旋转排序数组](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/搜索旋转排序数组.js)
   - [整数反转](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/整数反转.js)
   - [整数转罗马数字](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/整数转罗马数字.js)
+  - [旋转图像](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/旋转图像.ts)
   - [无重复字符最长子串](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/无重复字符最长子串.js)
   - [最长公共前缀](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/最长公共前缀.js)
   - [最长回文子串](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/最长回文子串.js)
@@ -67,6 +73,7 @@
   - [缺失的第一个正数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/缺失的第一个正数.ts)
   - [罗马数字转整数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/罗马数字转整数.js)
   - [解数独](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/解数独.js)
+  - [跳跃游戏2](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/跳跃游戏2.ts)
   - 递归
     - [K个一组翻转链表](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/递归/K个一组翻转链表.js)
     - [两两交换链表中的节点](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/递归/两两交换链表中的节点.js)
