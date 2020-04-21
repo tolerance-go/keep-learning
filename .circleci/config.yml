@@ -36,42 +36,6 @@ jobs:
           name: Test
           command: yarn test
 
-  build:
-    docker:
-      - image: circleci/node:lts
-    steps:
-      - checkout
-      - *restore_yarn_cache
-      - *run_yarn
-      - run:
-          name: Build All
-          command: yarn build && yarn build:components
-      - save_cache:
-          name: Save Build Cache
-          key: build-cache
-          paths:
-            - ./components-square
-            - ./README.md
-
-  deploy:
-    docker:
-      - image: circleci/node:lts
-    steps:
-      - checkout
-      - restore_cache:
-          name: Restore Build Cache
-          keys:
-            - build-cache
-      - run:
-          name: Deploy
-          command: |
-            git config credential.helper 'cache --timeout=120'
-            git config user.email "$GITHUB_EMAIL"
-            git config user.name "$GITHUB_USERNAME"
-            git add .
-            git commit -m "docs: via CircleCI build"
-            git push -q https://$GITHUB_PERSONAL_TOKEN@github.com/tolerance-go/keep-learning.git master
-
 workflows:
   version: 2.1
   default:
@@ -80,21 +44,3 @@ workflows:
       - test:
           requires:
             - setup
-      - build:
-          requires:
-            - test
-          filters:
-            # commit，tag 是没有分支概念的，branches 和 tags 是以 或 的取值方式作用的
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
-      - deploy:
-          context: GITHUB_TOKEN
-          requires:
-            - build
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/

@@ -4,7 +4,7 @@
 
 通过 github pr 进行开发，每一个 pr 都要打上 label，以便生成正确的 changelog
 
-对于 tag commit 会触发 ci 的构建流程，将构建产物通过提交一个 commit 推送 rep master 分支，所以不要在其它的分支打 tag
+因为项目是把源码和构建产物都存放在一起管理的，这里就将源码及其副作用影响都算在了一个版本范围内了，也就是版本号打在 build 之后
 
 ## 分支分类
 
@@ -26,8 +26,8 @@ develop 从 master 切出后，永不回去，也就是只有 develop 向 master
 
 1. 从 develop 新建分支 feat 功能分支或者 fix 问题修复分支，开发工作完成后，merge to develop
 2. 一旦准备发布，提交 pr from develop to master
-3. 在 master 分支生成 changelog 并提交新的 commit，同时在顶部打上 tag
-4. 推送 master 到远程即可；ci 接收到有 tag 信息的 commit 后，会触发构建，提交一个 commit 把构建产物推送到 repo
+3. 在 master 分支生成 changelog 和 构建产物并提交新的 commit，同时在顶部打上 tag
+4. 推送 master 到远程即可，推送前会触发构建，将副作用的影响代码都输出，因为可能利用到 branch name，所以是在 pre-push 前进行
 
 如果要回溯版本，将当前 commit 重置到上一个 tag 对应的 commit 即可
 
