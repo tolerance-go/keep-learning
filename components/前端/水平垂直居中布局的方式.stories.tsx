@@ -219,7 +219,6 @@ export const TableCell = () => {
     width: 100px;
     height: ${imgHeight}px;
     display: inline-block;
-    vertical-align: middle;
   `;
 
   const ChildOfSignleText = styled.span`
