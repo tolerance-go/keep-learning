@@ -12,9 +12,9 @@
 - develop
 - feat/xxx
 - fix/xxx
-- vX.X.X
-- feat-vX.X.X/xxx
-- fix-vX.X.X/xxx
+- vx.x.x
+- feat-vx.x.x/xxx
+- fix-vx.x.x/xxx
 
 develop 从 master 切出后，永不回去，也就是只有 develop 向 master 合并
 
@@ -34,3 +34,9 @@ develop 从 master 切出后，永不回去，也就是只有 develop 向 master
 ## 版本规范
 
 版本号语义规范严格遵循 [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/)
+
+tag msg 格式遵循 `version x.x.x`
+
+tag name 格式遵循 `vx.x.x`
+
+commit msg 格式遵循 `publish: vx.x.x`
