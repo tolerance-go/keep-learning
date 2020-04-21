@@ -21,7 +21,7 @@
   - 最佳实践
     - [如何实现无限滚动](https://github.com/tolerance-go/keep-learning/blob/master/src/前端/最佳实践/如何实现无限滚动.md)
 - 算法
-  - [Pow(x, n)](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/Pow(x, n).ts)
+  - [Pow(x,n)](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/Pow(x,n).ts)
   - [Z字形变换](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/Z字形变换.js)
   - [下一个排列](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/下一个排列.js)
   - [两数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/两数之和.js)
