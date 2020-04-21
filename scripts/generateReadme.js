@@ -1,8 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const shell = require('shelljs');
 
 const cwd = process.cwd();
 const folderFlag = 'folder';
+
+const branchName = shell.exec('git rev-parse --abbrev-ref HEAD').trim();
 
 const paths = {
   src: path.join(cwd, 'src'),
@@ -58,9 +61,9 @@ const writeReadme = () => {
         paths.readme,
         `${'  '.repeat(
           level,
-        )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/master/src/${path.join(
-          parents,
-          node[file].base,
+        )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+          encodeURIComponent(parents),
+          encodeURIComponent(node[file].base),
         )})\n`,
         {
           flag: 'a',
