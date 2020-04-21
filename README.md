@@ -33,9 +33,11 @@
   - [删除链表的倒数第N个节点](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/删除链表的倒数第N个节点.js)
   - 动态规划
     - [凑零钱](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/凑零钱.js)
+    - [接雨水](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/接雨水.ts)
     - [斐波那契数列](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/斐波那契数列.js)
     - [正则表达式匹配](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/正则表达式匹配.js)
     - [爬楼梯](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/爬楼梯.js)
+    - [通配符匹配](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/动态规划/通配符匹配.ts)
   - 双指针
     - [三数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/双指针/三数之和.js)
     - [删除排序数组中的重复项](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/双指针/删除排序数组中的重复项.js)
@@ -45,6 +47,7 @@
   - [回文数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/回文数.js)
   - [在排序数组中查找元素的第一个和最后一个位置](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/在排序数组中查找元素的第一个和最后一个位置.js)
   - [外观数列](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/外观数列.js)
+  - [字符串相乘](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/字符串相乘.ts)
   - [字符串转换整数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/字符串转换整数.js)
   - [实现strStr()](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/实现strStr().js)
   - [寻找两个有序数组的中位数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/寻找两个有序数组的中位数.js)
@@ -61,6 +64,7 @@
   - [盛最多水的容器](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/盛最多水的容器.js)
   - [组合总和](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/组合总和.js)
   - [组合总和2](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/组合总和2.js)
+  - [缺失的第一个正数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/缺失的第一个正数.ts)
   - [罗马数字转整数](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/罗马数字转整数.js)
   - [解数独](https://github.com/tolerance-go/keep-learning/blob/master/src/算法/解数独.js)
   - 递归
