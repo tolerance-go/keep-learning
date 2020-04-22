@@ -1,43 +1,38 @@
 # keep-learning
 
-快捷地址：
+用结构化的问题去解构世界，不断的提高自己的认知水平和解决问题的能力，换句话说，就是用问题建立自己的知识体系，这就是此项目的初衷，具体指标如下
 
-[changelog](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [components-square](https://tolerance-go.github.io/keep-learning/components-square) | [publish-strategy](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md)
+- 问题数量和方向性的丰富度
+- 问题描述的抽象能力
+- 答案的精准性
+- 以往知识的复用能力
 
-常念：
+希望我可以带着对未知的渴望和丰富的想象，早日迎来充盈而平静的生活
 
-- 这个世界太乱了，想要控制自己的情绪，还得问问自己的内心是否足够强大才行呀
-
-- 送给自己一句话，只有你自身变强了，才是给你的敌人最有力的回击，也是给你的至亲至爱最温暖的回应
-
-- 再送你一句话，多陈述事实，少一些抒发己见，对于我这样的一个经常思维跳跃的人会很有裨益
-
-- 这世界上没什么两个人是绝对不能分离的
-
-- 这世界上也没什么两个人是一摸一样的，而常态却是，之间的差异大到你无法想象
-
-- 你以前干过的蠢事，丢脸的事，自私的事，统统忘记吧，如果这时你说：我忘记没用啊，别人记得怎么办？我会说：别人吃饭不代表你饱了，别人的烦恼也绝不应该是你的烦恼
-
-- 快乐和烦恼都是因为：还有明天
+[更新日志](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [组件广场](https://tolerance-go.github.io/keep-learning/components-square) | [发布策略](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md) | [常念于心](https://github.com/tolerance-go/keep-learning/blob/master/CHANGE_NIAN_YU_XIN.md)
 
 ---
 
 - 前端
   - CSS
-    - [水平垂直居中布局的方式](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FCSS/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F.md)
+    - [水平垂直居中布局的方式有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FCSS/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B.md)
   - JS
-    - [继承方式](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FJS/%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F.md)
+    - [继承方式有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FJS/%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B.md)
   - babel
   - http(s)
-    - [https协议的过程](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/https%E5%8D%8F%E8%AE%AE%E7%9A%84%E8%BF%87%E7%A8%8B.md)
-    - [https获取加密密钥的过程](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/https%E8%8E%B7%E5%8F%96%E5%8A%A0%E5%AF%86%E5%AF%86%E9%92%A5%E7%9A%84%E8%BF%87%E7%A8%8B.md)
+    - [https协议的过程是什么](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/https%E5%8D%8F%E8%AE%AE%E7%9A%84%E8%BF%87%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88.md)
+    - [https获取加密密钥的过程是什么](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/https%E8%8E%B7%E5%8F%96%E5%8A%A0%E5%AF%86%E5%AF%86%E9%92%A5%E7%9A%84%E8%BF%87%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88.md)
     - [http的方法有哪几种](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/http%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D.md)
   - node
   - react
   - v8
   - webpack
   - 代理
-    - [跨域](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86/%E8%B7%A8%E5%9F%9F.md)
+    - 跨域
+      - [为什么会出现跨域](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%87%BA%E7%8E%B0%E8%B7%A8%E5%9F%9F.md)
+      - [什么是跨域](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F.md)
+      - [如何解决跨域](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F.md)
+      - [跨域受限制的场景有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F/%E8%B7%A8%E5%9F%9F%E5%8F%97%E9%99%90%E5%88%B6%E7%9A%84%E5%9C%BA%E6%99%AF%E6%9C%89%E5%93%AA%E4%BA%9B.md)
   - 最佳实践
     - [如何实现无限滚动](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%97%A0%E9%99%90%E6%BB%9A%E5%8A%A8.md)
 - 算法

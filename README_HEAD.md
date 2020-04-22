@@ -1,23 +1,14 @@
 # keep-learning
 
-快捷地址：
+用结构化的问题去解构世界，不断的提高自己的认知水平和解决问题的能力，换句话说，就是用问题建立自己的知识体系，这就是此项目的初衷，具体指标如下
 
-[changelog](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [components-square](https://tolerance-go.github.io/keep-learning/components-square) | [publish-strategy](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md)
+- 问题数量和方向性的丰富度
+- 问题描述的抽象能力
+- 答案的精准性
+- 以往知识的复用能力
 
-常念：
+希望我可以带着对未知的渴望和丰富的想象，早日迎来充盈而平静的生活
 
-- 这个世界太乱了，想要控制自己的情绪，还得问问自己的内心是否足够强大才行呀
-
-- 送给自己一句话，只有你自身变强了，才是给你的敌人最有力的回击，也是给你的至亲至爱最温暖的回应
-
-- 再送你一句话，多陈述事实，少一些抒发己见，对于我这样的一个经常思维跳跃的人会很有裨益
-
-- 这世界上没什么两个人是绝对不能分离的
-
-- 这世界上也没什么两个人是一摸一样的，而常态却是，之间的差异大到你无法想象
-
-- 你以前干过的蠢事，丢脸的事，自私的事，统统忘记吧，如果这时你说：我忘记没用啊，别人记得怎么办？我会说：别人吃饭不代表你饱了，别人的烦恼也绝不应该是你的烦恼
-
-- 快乐和烦恼都是因为：还有明天
+[更新日志](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [组件广场](https://tolerance-go.github.io/keep-learning/components-square) | [发布策略](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md) | [常念于心](https://github.com/tolerance-go/keep-learning/blob/master/CHANGE_NIAN_YU_XIN.md)
 
 ---
