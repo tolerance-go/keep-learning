@@ -10,7 +10,7 @@
     "run:as-server": "nodemon --watch 'AnswerSheet-service/**/*' -e ts --exec 'ts-node' --project tsconfig.server.json ./AnswerSheet-service/index.ts",
     "build": "node ./scripts/generateReadme.js",
     "build:components": "build-storybook -o dist-components",
-    "build:as": "parcel build AnswerSheet/index.html",
+    "build:as": "parcel build -d dist-as-app AnswerSheet/index.html",
     "build:as-server": "tsc --build tsconfig.server.json",
     "publish": "npm test && npm run build && lerna-changelog"
   },
