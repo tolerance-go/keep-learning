@@ -1,0 +1,281 @@
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0;vertical-align:top}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:400}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+q:before,q:after{content:""}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit}
+legend{color:#000}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansLycian-Regular.woff);unicode-range:U+10280-1029C}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansLydian-Regular.woff);unicode-range:U+10920-10939,U+1093F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOgham-Regular.woff);unicode-range:U+1680-169C}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOldSouthArabian-Regular.woff);unicode-range:U+10A60-10A7F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOldItalic-Regular.woff);unicode-range:U+10300-10323}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTagbanwa-Regular.woff);unicode-range:U+1735-1736,U+1760-176C,U+176E-1770,U+1772-1773}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansBuhid-Regular.woff);unicode-range:U+1735-1736,U+1740-1753,U+200B-200D,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTagalog-Regular.woff);unicode-range:U+1700-170C,U+170E-1714,U+1735-1736}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansInscriptionalPahlavi-Regular.woff);unicode-range:U+10B60-10B72,U+10B78-10B7F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansGothic-Regular.woff);unicode-range:U+304-305,U+308,U+331,U+10330-1034A}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansPhoenician-Regular.woff);unicode-range:U+10900-1091B,U+1091F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansImperialAramaic-Regular.woff);unicode-range:U+10840-10855,U+10857-1085F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansLisu-Regular.woff);unicode-range:U+2BC,U+2CD,U+2010,U+300A-300B,U+A4D0-A4FF}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansCarian-Regular.woff);unicode-range:U+102A0-102D0}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansShavian-Regular.woff);unicode-range:U+10450-1047F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansRejang-Regular.woff);unicode-range:U+A930-A953,U+A95F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansUgaritic-Regular.woff);unicode-range:U+10380-1039D,U+1039F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansInscriptionalParthian-Regular.woff);unicode-range:U+10B40-10B55,U+10B58-10B5F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansHanunoo-Regular.woff);unicode-range:U+1720-1736,U+200B-200D,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansCypriot-Regular.woff);unicode-range:U+10800-10805,U+10808,U+1080A-10835,U+10837-10838,U+1083C,U+1083F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOldTurkic-Regular.woff);unicode-range:U+10C00-10C48}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansBuginese-Regular.woff);unicode-range:U+1A00-1A1B,U+1A1E-1A1F,U+200B-200D,U+25CC,U+A9CF}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOsmanya-Regular.woff);unicode-range:U+10480-1049D,U+104A0-104A9}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOlChiki-Regular.woff);unicode-range:U+1C50-1C7F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansRunic-Regular.woff);unicode-range:U+16A0-16F8}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansKayahLi-Regular.woff);unicode-range:U+200C-200D,U+2010,U+25CC,U+A900-A92F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTaiLe-Regular.woff);unicode-range:U+300-301,U+307-308,U+30C,U+1040-1049,U+1950-196D,U+1970-1974,U+3001-3002,U+3008-300B}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSundanese-Regular.woff);unicode-range:U+1B80-1BBF,U+1CC0-1CC7}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSamaritan-Regular.woff);unicode-range:U+800-82D,U+830-83E,U+2E31}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOsage-Regular.woff);unicode-range:U+301,U+304,U+30B,U+358,U+25CC,U+104B0-104D3,U+104D8-104FB}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansDeseret-Regular.woff);unicode-range:U+10400-1044F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansLimbu-Regular.woff);unicode-range:U+964-965,U+1900-191C,U+1920-192B,U+1930-193B,U+1940,U+1944-194F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansAvestan-Regular.woff);unicode-range:U+2E30-2E31,U+10B00-10B35,U+10B39-10B3F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOldPersian-Regular.woff);unicode-range:U+103A0-103C3,U+103C8-103D5}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansMeeteiMayek-Regular.woff);unicode-range:U+AAE0-AAF6,U+ABC0-ABED,U+ABF0-ABF9}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSylotiNagri-Regular.woff);unicode-range:U+964-965,U+9E6-9EF,U+200B-200D,U+2010-2011,U+2055,U+25CC,U+A800-A82B}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansBatak-Regular.woff);unicode-range:U+1BC0-1BF3,U+1BFC-1BFF,U+200B-200D,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansThaana-Regular.woff);unicode-range:U+60C,U+61B-61C,U+61F,U+660-66C,U+780-7B1,U+200B-200F,U+2018-2019,U+201C-201D,U+25CC,U+FDF2,U+FDFD}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTifinagh-Regular.woff);unicode-range:U+301-302,U+304,U+306-307,U+309,U+323,U+331,U+200C-200D,U+25CC,U+2D30-2D67,U+2D6F-2D70,U+2D7F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTaiViet-Regular.woff);unicode-range:U+200B-200D,U+25CC,U+A78C,U+AA80-AAC2,U+AADB-AADF}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansNewTaiLue-Regular.woff);unicode-range:U+1980-19AB,U+19B0-19C9,U+19D0-19DA,U+19DE-19DF,U+200C-200D,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansHebrew-Regular.woff);unicode-range:U+591-5C7,U+5D0-5EA,U+5F0-5F4,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB36,U+FB38-FB3C,U+FB3E,U+FB40-FB41,U+FB43-FB44,U+FB46-FB4F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansArmenian-Regular.woff);unicode-range:U+531-556,U+559-55F,U+561-587,U+589-58A,U+58D-58F,U+2010,U+FB13-FB17}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansLao-Regular.woff);unicode-range:U+E81-E82,U+E84,U+E87-E88,U+E8A,U+E8D,U+E94-E97,U+E99-E9F,U+EA1-EA3,U+EA5,U+EA7,U+EAA-EAB,U+EAD-EB9,U+EBB-EBD,U+EC0-EC4,U+EC6,U+EC8-ECD,U+ED0-ED9,U+EDC-EDF,U+200B-200D,U+20AD,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansMandaic-Regular.woff);unicode-range:U+640,U+840-85B,U+85E,U+200C-200D,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSaurashtra-Regular.woff);unicode-range:U+200C-200D,U+25CC,U+A880-A8C4,U+A8CE-A8D9}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansNKo-Regular.woff);unicode-range:U+60C,U+61B,U+61F,U+66A,U+7C0-7FA,U+200C-200F,U+25CC,U+2E1C-2E1D,U+FD3E-FD3F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansKharoshthi-Regular.woff);unicode-range:U+10A00-10A03,U+10A05-10A06,U+10A0C-10A13,U+10A15-10A17,U+10A19-10A33,U+10A38-10A3A,U+10A3F-10A47,U+10A50-10A58}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansThai-Regular.woff);unicode-range:U+2BC,U+2D7,U+303,U+331,U+E01-E3A,U+E3F-E5B,U+200B-200D,U+2010,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansGlagolitic-Regular.woff);unicode-range:U+303,U+305,U+484,U+487,U+2C00-2C2E,U+2C30-2C5E,U+A66F,U+1E000-1E006,U+1E008-1E018,U+1E01B-1E021,U+1E023-1E024,U+1E026-1E02A}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansBrahmi-Regular.woff);unicode-range:U+11000-1104D,U+11052-1106F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansCoptic-Regular.woff);unicode-range:U+300-302,U+304-305,U+307-308,U+323,U+33F,U+361,U+374-375,U+3E2-3EF,U+25CC,U+2C80-2CF3,U+2CF9-2CFF,U+FE24-FE26}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansGeorgian-Regular.woff);unicode-range:U+301-302,U+304,U+308,U+589,U+10A0-10C5,U+10C7,U+10CD,U+10D0-10FF,U+2010,U+20BE,U+2D00-2D25,U+2D27,U+2D2D}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansCham-Regular.woff);unicode-range:U+200C-200D,U+2010,U+25CC,U+AA00-AA36,U+AA40-AA4D,U+AA50-AA59,U+AA5C-AA5F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansBalinese-Regular.woff);unicode-range:U+1B00-1B4B,U+1B50-1B7C,U+200B-200D,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansPhagsPa-Regular.woff);unicode-range:U+1801-1803,U+1805,U+200B-200F,U+2025-2026,U+25CC,U+3001-3002,U+3007-3011,U+3014-301B,U+A840-A877,U+FE00}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansChakma-Regular.woff);unicode-range:U+9E6-9EF,U+1040-1049,U+200C-200D,U+25CC,U+11100-11134,U+11136-11143}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansGurmukhi-Regular.woff);unicode-range:U+964-965,U+A01-A03,U+A05-A0A,U+A0F-A10,U+A13-A28,U+A2A-A30,U+A32-A33,U+A35-A36,U+A38-A39,U+A3C,U+A3E-A42,U+A47-A48,U+A4B-A4D,U+A51,U+A59-A5C,U+A5E,U+A66-A75,U+200B-200D,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20B9,U+2212,U+25CC,U+262C,U+A830-A839}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansJavanese-Regular.woff);unicode-range:U+200B-200D,U+25CC,U+A980-A9CD,U+A9CF-A9D9,U+A9DE-A9DF}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansKhmer-Regular.woff);unicode-range:U+1780-17DD,U+17E0-17E9,U+17F0-17F9,U+19E0-19FF,U+200B-200D,U+2010,U+2018-2019,U+201C-201D,U+2026,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTamil-Regular.woff);unicode-range:U+951-952,U+964-965,U+B82-B83,U+B85-B8A,U+B8E-B90,U+B92-B95,U+B99-B9A,U+B9C,U+B9E-B9F,U+BA3-BA4,U+BA8-BAA,U+BAE-BB9,U+BBE-BC2,U+BC6-BC8,U+BCA-BCD,U+BD0,U+BD7,U+BE6-BFA,U+1CDA,U+200B-200D,U+2010,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+2074,U+2082-2084,U+20B9,U+2212,U+25CC,U+A8F3,U+11303,U+1133C}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSyriacEstrangela-Regular.woff);unicode-range:U+303-304,U+307-308,U+30A,U+320,U+323-325,U+32D-32E,U+330,U+60C,U+61B,U+61F,U+621,U+640,U+64B-655,U+660-66C,U+670,U+700-70D,U+70F-74A,U+74D-74F,U+200C-200F,U+2026,U+2044,U+2212,U+25CC,U+2670-2671}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansCanadianAboriginal-Regular.woff);unicode-range:U+131,U+2C7,U+2D8-2DB,U+307,U+1400-167F,U+18B0-18F5}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSyriacEastern-Regular.woff);unicode-range:U+303-304,U+307-308,U+30A,U+320,U+323-325,U+32D-32E,U+330,U+60C,U+61B,U+61F,U+621,U+640,U+64B-655,U+660-66C,U+670,U+700-70D,U+70F-74A,U+74D-74F,U+200C-200F,U+2026,U+2044,U+2212,U+25CC,U+2670-2671}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTaiTham-Regular.woff);unicode-range:U+1A20-1A5E,U+1A60-1A7C,U+1A7F-1A89,U+1A90-1A99,U+1AA0-1AAD,U+200B-200D,U+2219,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSyriacWestern-Regular.woff);unicode-range:U+303-304,U+307-308,U+30A,U+320,U+323-325,U+32D-32E,U+330,U+60C,U+61B,U+61F,U+621,U+640,U+64B-655,U+660-66C,U+670,U+700-70D,U+70F-74A,U+74D-74F,U+200C-200F,U+2026,U+2044,U+2212,U+25CC,U+2670-2671}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansAdlam-Regular.woff);unicode-range:U+61F,U+640,U+204F,U+2E41,U+1E900-1E94A,U+1E950-1E959,U+1E95E-1E95F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansVai-Regular.woff);unicode-range:U+A500-A62B}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansMalayalam-Regular.woff);unicode-range:U+307,U+323,U+964-965,U+D02-D03,U+D05-D0C,U+D0E-D10,U+D12-D3A,U+D3D-D44,U+D46-D48,U+D4A-D4E,U+D57,U+D60-D63,U+D66-D75,U+D79-D7F,U+200B-200D,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20B9,U+2212,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansKaithi-Regular.woff);unicode-range:U+966-96F,U+A830-A839,U+11080-110C1}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoKufiArabic-Regular.woff);unicode-range:U+600-603,U+60B-615,U+61B,U+61E-61F,U+621-63A,U+640-65E,U+660-673,U+675-6EB,U+6ED-6FF,U+750-76D,U+200B-200F,U+25CC,U+FB51,U+FB57-FB59,U+FB67-FB6D,U+FB7B-FB7D,U+FB89,U+FB8B,U+FB8D,U+FB8F-FB91,U+FB93-FB95,U+FB9F,U+FBA5,U+FBA7-FBA9,U+FBAB-FBAD,U+FBAF,U+FBB1,U+FBE6-FBE9,U+FBFD-FBFF,U+FC5E-FC63,U+FD3E-FD3F,U+FDF2,U+FDFC,U+FE70,U+FE72,U+FE74,U+FE76,U+FE78,U+FE7A,U+FE7C,U+FE7E,U+FE82,U+FE84,U+FE86,U+FE88,U+FE8A-FE8C,U+FE8E,U+FE90-FE92,U+FE94,U+FE96-FE98,U+FE9A-FE9C,U+FE9E-FEA0,U+FEA2-FEA4,U+FEA6-FEA8,U+FEAA,U+FEAC,U+FEAE,U+FEB0,U+FEB2-FEB4,U+FEB6-FEB8,U+FEBA-FEBC,U+FEBE-FEC0,U+FEC2-FEC4,U+FEC6-FEC8,U+FECA-FECC,U+FECE-FED0,U+FED2-FED4,U+FED6-FED8,U+FEDA-FEDC,U+FEDE-FEE0,U+FEE2-FEE4,U+FEE6-FEE8,U+FEEA-FEEC,U+FEEE,U+FEF0,U+FEF2-FEFC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansCherokee-Regular.woff);unicode-range:U+300-302,U+304,U+30B-30C,U+323-324,U+330-331,U+13A0-13F5,U+13F8-13FD,U+AB70-ABBF}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansLinearB-Regular.woff);unicode-range:U+10000-1000B,U+1000D-10026,U+10028-1003A,U+1003C-1003D,U+1003F-1004D,U+10050-1005D,U+10080-100FA,U+10100-10102,U+10107-10133,U+10137-1013F}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansKannada-Regular.woff);unicode-range:U+964-965,U+C82-C83,U+C85-C8C,U+C8E-C90,U+C92-CA8,U+CAA-CB3,U+CB5-CB9,U+CBC-CC4,U+CC6-CC8,U+CCA-CCD,U+CD5-CD6,U+CDE,U+CE0-CE3,U+CE6-CEF,U+CF1-CF2,U+200B-200D,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20B9,U+2212,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansLepcha-Regular.woff);unicode-range:U+1C00-1C37,U+1C3B-1C49,U+1C4D-1C4F,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansOriya-Regular.woff);unicode-range:U+964-965,U+B01-B03,U+B05-B0C,U+B0F-B10,U+B13-B28,U+B2A-B30,U+B32-B33,U+B35-B39,U+B3C-B44,U+B47-B48,U+B4B-B4D,U+B56-B57,U+B5C-B5D,U+B5F-B63,U+B66-B77,U+200B-200D,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20B9,U+2212,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTelugu-Regular.woff);unicode-range:U+964-965,U+C01-C03,U+C05-C0C,U+C0E-C10,U+C12-C28,U+C2A-C33,U+C35-C39,U+C3D-C44,U+C46-C48,U+C4A-C4D,U+C55-C56,U+C58-C59,U+C60-C63,U+C66-C6F,U+C78-C7F,U+200B-200D,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20B9,U+2212,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansBengali-Regular.woff);unicode-range:U+2BC,U+951-952,U+964-965,U+980-983,U+985-98C,U+98F-990,U+993-9A8,U+9AA-9B0,U+9B2,U+9B6-9B9,U+9BC-9C4,U+9C7-9C8,U+9CB-9CE,U+9D7,U+9DC-9DD,U+9DF-9E3,U+9E6-9FB,U+200B-200D,U+2010,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20B9,U+2212,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansGujarati-Regular.woff);unicode-range:U+964-965,U+A81-A83,U+A85-A8D,U+A8F-A91,U+A93-AA8,U+AAA-AB0,U+AB2-AB3,U+AB5-AB9,U+ABC-AC5,U+AC7-AC9,U+ACB-ACD,U+AD0,U+AE0-AE3,U+AE6-AF1,U+200B-200D,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20B9,U+2212,U+25CC,U+A830-A839}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansYi-Regular.woff);unicode-range:U+3001-3002,U+3008-3011,U+3014-301B,U+30FB,U+A000-A48C,U+A490-A4C6,U+FF61-FF65}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansMongolian-Regular.woff);unicode-range:U+1800-180E,U+1810-1819,U+1820-1877,U+1880-18AA,U+200C-200D,U+2013-2014,U+202F,U+2048-2049,U+2460-2473,U+25CC,U+3001-3002,U+FE3D-FE3E,U+FE41-FE44}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansArabic-Regular.woff);unicode-range:U+34F,U+600-61C,U+61E-6FF,U+750-77F,U+8A0-8B4,U+8B6-8BD,U+8D4-8FF,U+200B-2011,U+204F,U+25CC,U+2E41,U+FB50-FBC1,U+FBD3-FD3F,U+FD50-FD8F,U+FD92-FDC7,U+FDF0-FDFD,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansMyanmar-Regular.woff);unicode-range:U+1000-109F,U+200B-200D,U+2018-2019,U+201C-201D,U+2026,U+25CC,U+A92E,U+A9E0-A9FE,U+AA60-AA7F,U+FE00}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansBamum-Regular.woff);unicode-range:U+A6A0-A6F7,U+16800-16A38}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoNaskhArabic-Regular.woff);unicode-range:U+600-604,U+606-61B,U+61E-6FF,U+750-77F,U+8A0,U+8A2-8AC,U+8E4-8FE,U+200B-2011,U+204F,U+25CC,U+2E41,U+FB51,U+FB53-FB55,U+FB57-FB59,U+FB5B-FB5D,U+FB5F-FB61,U+FB63-FB65,U+FB67-FB69,U+FB6B-FB6D,U+FB6F-FB71,U+FB73-FB75,U+FB77-FB79,U+FB7B-FB7D,U+FB7F-FB81,U+FB83,U+FB85,U+FB87,U+FB89,U+FB8B,U+FB8D,U+FB8F-FB91,U+FB93-FB95,U+FB97-FB99,U+FB9B-FB9D,U+FB9F,U+FBA1,U+FBA5,U+FBA7-FBA9,U+FBAB-FBAD,U+FBAF,U+FBB1-FBC1,U+FBD4-FBD6,U+FBD8,U+FBDA,U+FBDC,U+FBDF,U+FBE1,U+FBE3,U+FBE5-FBFB,U+FBFD-FD3F,U+FD50-FD8F,U+FD92-FDC7,U+FDF0-FDFD,U+FE70-FE74,U+FE76-FE7F,U+FE82,U+FE84,U+FE86,U+FE88,U+FE8A-FE8C,U+FE8E,U+FE90-FE92,U+FE94,U+FE96-FE98,U+FE9A-FE9C,U+FE9E-FEA0,U+FEA2-FEA4,U+FEA6-FEA8,U+FEAA,U+FEAC,U+FEAE,U+FEB0,U+FEB2-FEB4,U+FEB6-FEB8,U+FEBA-FEBC,U+FEBE-FEC0,U+FEC2-FEC4,U+FEC6-FEC8,U+FECA-FECC,U+FECE-FED0,U+FED2-FED4,U+FED6-FED8,U+FEDA-FEDC,U+FEDE-FEE0,U+FEE2-FEE4,U+FEE6-FEE8,U+FEEA-FEEC,U+FEEE,U+FEF0,U+FEF2-FEFC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansDevanagari-Regular.woff);unicode-range:U+2BC,U+900-97F,U+1CD0-1CF6,U+1CF8-1CF9,U+200B-200D,U+2010,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+20B9,U+20F0,U+2212,U+25CC,U+A830-A839,U+A8E0-A8FD}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSymbols-Regular.woff);unicode-range:U+20DD-20E0,U+20E2-20E4,U+2160-2183,U+2185-2188,U+218A-218B,U+2190-2199,U+2300-230F,U+2311-2315,U+2317,U+231C-231F,U+2322-2323,U+2329-232A,U+232C-2335,U+237C,U+2380-2394,U+2396-239A,U+23AF,U+23BE-23CD,U+23D0-23DB,U+23E2-23E8,U+2460-24FF,U+25CC,U+260A-260D,U+2613,U+2624-262F,U+2638-263B,U+263D-2653,U+2669-267E,U+2690-269D,U+26A2-26A9,U+26AD-26BC,U+26CE,U+26E2-26FF,U+271D-2721,U+2776-2793,U+2921-2922,U+1F100-1F10C,U+1F110-1F12E,U+1F130-1F16B,U+1F170-1F190,U+1F19B-1F1AC,U+1F546-1F549,U+1F54F,U+1F610,U+1F700-1F773}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSinhala-Regular.woff);unicode-range:U+964-965,U+D82-D83,U+D85-D96,U+D9A-DB1,U+DB3-DBB,U+DBD,U+DC0-DC6,U+DCA,U+DCF-DD4,U+DD6,U+DD8-DDF,U+DE6-DEF,U+DF2-DF4,U+200B-200D,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+2212,U+25CC,U+111E1-111F4}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansAnatolianHieroglyphs-Regular.woff);unicode-range:U+200B,U+14400-14646}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansEthiopic-Regular.woff);unicode-range:U+308,U+30E,U+1200-1248,U+124A-124D,U+1250-1256,U+1258,U+125A-125D,U+1260-1288,U+128A-128D,U+1290-12B0,U+12B2-12B5,U+12B8-12BE,U+12C0,U+12C2-12C5,U+12C8-12D6,U+12D8-1310,U+1312-1315,U+1318-135A,U+135D-137C,U+1380-1399,U+2010,U+22EE,U+25CC,U+2D80-2D96,U+2DA0-2DA6,U+2DA8-2DAE,U+2DB0-2DB6,U+2DB8-2DBE,U+2DC0-2DC6,U+2DC8-2DCE,U+2DD0-2DD6,U+2DD8-2DDE,U+AB01-AB06,U+AB09-AB0E,U+AB11-AB16,U+AB20-AB26,U+AB28-AB2E}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSans-Regular.woff);unicode-range:U+100-377,U+37A-37F,U+384-38A,U+38C,U+38E-3A1,U+3A3-3E1,U+3F0-52F,U+1AB0-1ABE,U+1C80-1C88,U+1D00-1DF5,U+1DFB-1F15,U+1F18-1F1D,U+1F20-1F45,U+1F48-1F4D,U+1F50-1F57,U+1F59,U+1F5B,U+1F5D,U+1F5F-1F7D,U+1F80-1FB4,U+1FB6-1FC4,U+1FC6-1FD3,U+1FD6-1FDB,U+1FDD-1FEF,U+1FF2-1FF4,U+1FF6-1FFE,U+2000-2064,U+2066-2071,U+2074-208E,U+2090-209C,U+20A0-20BF,U+20F0,U+2100-215F,U+2184,U+2189,U+2C60-2C7F,U+2DE0-2E44,U+A640-A69F,U+A700-A7AE,U+A7B0-A7B7,U+A7F7-A7FF,U+A92E,U+AB30-AB65,U+FB00-FB06,U+FE00,U+FE20-FE2F,U+FEFF,U+FFFC-FFFD}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoEmoji-Regular.woff);unicode-range:U+203C,U+2049,U+20E3,U+2122,U+2139,U+2194-2199,U+21A9-21AA,U+231A-231B,U+23E9-23EC,U+23F0,U+23F3,U+24C2,U+25AA-25AB,U+25B6,U+25C0,U+25CA,U+25FB-25FE,U+2600-2601,U+260E,U+2611,U+2614-2615,U+261D,U+263A,U+2648-2653,U+2660,U+2663,U+2665-2666,U+2668,U+267B,U+267F,U+2693,U+26A0-26A1,U+26AA-26AB,U+26BD-26BE,U+26C4-26C5,U+26CE,U+26D4,U+26EA,U+26F2-26F3,U+26F5,U+26FA,U+26FD,U+2702,U+2705,U+2708-270C,U+270F,U+2712,U+2714,U+2716,U+2728,U+2733-2734,U+2744,U+2747,U+274C,U+274E,U+2753-2755,U+2757,U+2764,U+2795-2797,U+27A1,U+27B0,U+27BF,U+2934-2935,U+2B05-2B07,U+2B1B-2B1C,U+2B50,U+2B55,U+3030,U+303D,U+3297,U+3299,U+FEFF,U+1F004,U+1F0CF,U+1F170-1F171,U+1F17E-1F17F,U+1F18E,U+1F191-1F19A,U+1F1E6-1F1FF,U+1F201-1F202,U+1F21A,U+1F22F,U+1F232-1F23A,U+1F250-1F251,U+1F300-1F320,U+1F330-1F335,U+1F337-1F37C,U+1F380-1F393,U+1F3A0-1F3C4,U+1F3C6-1F3CA,U+1F3E0-1F3F0,U+1F400-1F429,U+1F42B-1F43E,U+1F440,U+1F442-1F4F7,U+1F4F9-1F4FC,U+1F500-1F53D,U+1F550-1F567,U+1F5FB-1F640,U+1F645-1F64F,U+1F680-1F697,U+1F699-1F6C5,U+FE4E5-FE4EE,U+FE82C,U+FE82E-FE837}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansTibetan-Regular.woff);unicode-range:U+F00-F47,U+F49-F6C,U+F71-F97,U+F99-FBC,U+FBE-FCC,U+FCE-FDA,U+200B-200D,U+25CC}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoNastaliqUrdu-Regular.woff);unicode-range:U+600-604,U+609-614,U+61B-61C,U+61E-659,U+65D-673,U+679-681,U+683-68F,U+691,U+693,U+696,U+698-69A,U+69E,U+6A1,U+6A4,U+6A6,U+6A9,U+6AB,U+6AF-6B1,U+6B3,U+6B7,U+6BA-6BC,U+6BE,U+6C0-6C4,U+6CC-6CD,U+6D0,U+6D2-6D5,U+6DD-6DE,U+6E0-6E1,U+6E9,U+6EE-6F9,U+6FF,U+759,U+75C,U+763,U+767-77D,U+8FF,U+200B-2011,U+2013-2014,U+2018-2019,U+201C-201D,U+2039-203A,U+2212,U+25CC,U+FBB2-FBC1,U+FD3E-FD3F,U+FDF2,U+FDF4,U+FDFA-FDFD}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansSymbols2-Regular.woff);unicode-range:U+2022,U+20E2-20E3,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2316,U+2318,U+231A-231B,U+2324-2328,U+232B,U+237B,U+237D-237F,U+2394,U+23CE-23CF,U+23E9-23EA,U+23ED-23EF,U+23F1-23FE,U+2400-2426,U+2440-244A,U+25A0-2609,U+260E-2612,U+2614-2623,U+2630-2637,U+263C,U+2654-2668,U+267F-268F,U+269E-26A1,U+26AA-26AC,U+26BD-26CD,U+26CF-26E1,U+2700-2704,U+2706-2709,U+270B-271C,U+2722-2727,U+2729-274B,U+274D,U+274F-2753,U+2756-2775,U+2794,U+2798-27AF,U+27B1-27BE,U+2800-28FF,U+2981,U+29BF,U+29EB,U+2B00-2B0D,U+2B12-2B2F,U+2B4D-2B73,U+2B76-2B95,U+2B98-2BB9,U+2BBD-2BC8,U+2BCA-2BD1,U+2BEC-2BEF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019B,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D300-1D356,U+1D360-1D371,U+1F000-1F02B,U+1F030-1F093,U+1F0A0-1F0AE,U+1F0B1-1F0BF,U+1F0C1-1F0CF,U+1F0D1-1F0F5,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F321-1F32C,U+1F336,U+1F378,U+1F37D,U+1F393-1F39F,U+1F3A7,U+1F3AC-1F3AE,U+1F3C2,U+1F3C4,U+1F3C6,U+1F3CA-1F3CE,U+1F3D4-1F3E0,U+1F3ED,U+1F3F1-1F3F3,U+1F3F5-1F3F7,U+1F408,U+1F415,U+1F41F,U+1F426,U+1F43F,U+1F441-1F442,U+1F446-1F449,U+1F44C-1F44E,U+1F453,U+1F46A,U+1F47D,U+1F4A3,U+1F4B0,U+1F4B3,U+1F4B9,U+1F4BB,U+1F4BF,U+1F4C8-1F4CB,U+1F4DA,U+1F4DF,U+1F4E4-1F4E6,U+1F4EA-1F4ED,U+1F4F7,U+1F4F9-1F4FB,U+1F4FD-1F4FE,U+1F503,U+1F507-1F50A,U+1F50D,U+1F512-1F513,U+1F53E-1F545,U+1F54A,U+1F550-1F579,U+1F57B-1F594,U+1F597-1F5A3,U+1F5A5-1F5FA,U+1F650-1F67F,U+1F687,U+1F68D,U+1F691,U+1F694,U+1F698,U+1F6AD,U+1F6B2,U+1F6B9-1F6BA,U+1F6BC,U+1F6C6-1F6CB,U+1F6CD-1F6CF,U+1F6E0-1F6EA,U+1F6F0-1F6F3,U+1F780-1F7D4,U+1F800-1F80B,U+1F810-1F847,U+1F850-1F859,U+1F860-1F887,U+1F890-1F8AD,U+1F93B,U+1F946}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansEgyptianHieroglyphs-Regular.woff);unicode-range:U+200C-200D,U+25CC,U+13000-1342E}
+@font-face{font-family:noto-fanyi;src:url(https://fanyi-cdn.cdn.bcebos.com/fonts/NotoSansCuneiform-Regular.woff);unicode-range:U+12000-12399,U+12400-1246E,U+12470-12474,U+12480-12543}
+.inner-te,.inner{margin:0 auto}
+@media (max-width:1278px){.inner-te,.inner{width:993px}}
+@media (min-width:1279px) and (max-width:1506px){.inner-te,.inner{margin:0 143px;width:auto}}
+@media (min-width:1507px){.inner-te,.inner{width:1220px}}
+#baidu_translate_input{font-family:Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","WenQuanYi Micro Hei",sans-serif,noto-fanyi!important}
+body{font:12px Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","WenQuanYi Micro Hei",sans-serif}
+html,body{background:#fff}
+body.no-interaction{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+a{text-decoration:none;color:#666}
+a:hover{text-decoration:underline}
+i{font-style:normal}
+.clearfix:before,.clearfix:after{content:" ";display:table}
+.clearfix:after{clear:both}
+.container{background:#fff}
+.cut-font{overflow:hidden;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}
+.card-shadow{-webkit-box-shadow:1px 2px 1px 0 rgba(0,0,0,.072);-moz-box-shadow:1px 2px 1px 0 rgba(0,0,0,.072);box-shadow:1px 2px 1px 0 rgba(0,0,0,.072);filter:progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color="#e3e3e3") \9}
+.arrow{display:inline-block;width:0;height:0;font-size:0}
+.hide{display:none}
+.show{display:block}
+#passport-login-pop{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+.simultaneous-interpretation{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float:right;position:relative;height:38px;color:#666;border:1px solid transparent}
+.simultaneous-interpretation:hover{border:1px solid #eee;background-color:#fcfcfc}
+.simultaneous-interpretation *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.simultaneous-interpretation a{display:inline-block;padding:1px 17px 0;line-height:36px}
+.simultaneous-interpretation a:hover{text-decoration:none}
+.simultaneous-interpretation .icon-hotlk{position:absolute;top:-1px;right:-4px}
+.download-guide{height:36px;float:right;position:relative;padding-left:26px}
+.download-guide:before{content:'';position:absolute;left:0;bottom:0;top:0;margin:auto 0;width:1px;height:13px;background-color:#999}
+.download-guide-ul{width:100%;height:100%;list-style:none}
+.download-guide-ul .guide-list{display:inline-block;float:left;height:36px;width:98px;color:#666;cursor:pointer;border:1px solid transparent;position:relative}
+.download-guide-ul .guide-list.download-app{width:130px;height:60px;border-width:0;background-image:-webkit-linear-gradient(174deg,#1AB6FF 0,#1AB6FF 0,#028FFF 100%);background-image:-moz-linear-gradient(174deg,#1AB6FF 0,#1AB6FF 0,#028FFF 100%);background-image:-o-linear-gradient(174deg,#1AB6FF 0,#1AB6FF 0,#028FFF 100%);background-image:linear-gradient(-84deg,#1AB6FF 0,#1AB6FF 0,#028FFF 100%);top:-14px}
+.download-guide-ul .guide-list:hover{background-color:#fcfcfc;border:1px solid #eee}
+.download-guide-ul .guide-list:hover.download-app{border-width:0;background-color:transparent}
+.download-app:hover .app-contain{display:block;text-decoration:none}
+.app-list-name:hover{text-decoration:none}
+.guide-list .list-name{width:100%;height:100%;display:block;text-align:center;line-height:36px}
+.app-list-name{color:#fff;position:relative;top:15px}
+.app-contain{position:relative;height:240px;display:none;z-index:999;background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/download-app-qr_5682465.png);background-repeat:no-repeat;-webkit-background-size:200px 200px;-moz-background-size:200px 200px;background-size:200px 200px;border:1px solid #eee;text-decoration:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:#fff;width:220px;background-position:center 10px;padding-top:207px;left:-48px}
+.download-guide-ul .guide-list.download-plugin{width:80px}
+.download-plugin:hover .plugin-contain{display:block}
+.plugin-contain{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:463px;position:absolute;z-index:99;background-color:#fff;left:-170px;top:36px;border:1px solid #eee;font-family:Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;padding-top:30px;padding-left:25px;padding-bottom:30px;display:none;cursor:default}
+.plugin-contain *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.plugin-contain a:hover{text-decoration:none}
+.plugin-contain h2{font-size:16px;color:#000;line-height:16px}
+.plugin-contain .note{font-size:12px;color:#CCC;vertical-align:middle}
+.plugin-contain .desc{font-size:12px;color:#999;line-height:28px}
+.plugin-contain .browser-border,.plugin-contain .logo-list-li{border:1px solid #e5e5e5}
+.plugin-contain .browser-border:hover,.plugin-contain .logo-list-li:hover{border-color:#00a0e9}
+.plugin-contain .ocr-extension-browser{display:block;width:138px;height:58px;padding-left:62px;line-height:56px;font-size:12px;color:#4A4A4A;margin:7px 0 30px;background-repeat:no-repeat;background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/chrome_6767d2f.png);-webkit-background-size:32px 32px;-moz-background-size:32px 32px;background-size:32px 32px;background-position:20px center}
+.plugin-contain .logo-list{font-size:0}
+.plugin-contain .logo-list-li{margin-top:7px;margin-right:7px;width:63px;height:63px;position:relative;display:inline-block;vertical-align:top}
+.plugin-contain .logo-list-li a{position:absolute;width:100%;height:100%;top:0;left:0;text-align:center;padding-top:40px;-webkit-background-size:30px 30px;-moz-background-size:30px 30px;background-size:30px 30px;background-repeat:no-repeat;background-position:center 7px}
+.plugin-contain .logo-list-li span{font-size:12px;line-height:1;-webkit-transform:scale(0.8);-moz-transform:scale(0.8);-ms-transform:scale(0.8);-o-transform:scale(0.8);transform:scale(0.8);display:inline-block}
+.plugin-contain .browser1 a{background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/chrome_6767d2f.png)}
+.plugin-contain .browser2 a{background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/baidu_b76f076.png)}
+.plugin-contain .browser3 a{background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/qq_6c105d0.png)}
+.plugin-contain .browser4 a{background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/360_f91f361.png)}
+.plugin-contain .browser5 a{background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/360speed_c333d6c.png)}
+.plugin-contain .browser6 a{background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/cheetah_a9595c4.png)}
+.plugin-contain .browser7 a{background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/uc_948a046.png)}
+.plugin-contain .browser8 a{background-image:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/widget/header/downloadGuide/img/opera_ce2f8fc.png)}
+.app-contain{text-align:center}
+
+.header{height:31px;line-height:31px;padding:14px 0;background:#fff}
+.logo-image{padding-top:0}
+.menu-text{height:49px;margin:0 0 0 50px}
+.logo-activity{width:152px;height:48px;margin-top:-14px;margin-left:16px}
+.divide-wrap{position:relative;height:1px;z-index:1}
+.colorbar{width:100%;height:100%;z-index:11;background:url(https://fanyi-cdn.cdn.bcebos.com/static/translation/img/header/colorbar_623c2a2.png) center no-repeat;position:relative}
+.colorbar-before{content:"";position:absolute;left:0;width:50%;height:100%;z-index:9;background-color:#1b24ff}
+.colorbar-after{content:"";position:absolute;right:0;width:50%;height:100%;z-index:9;background-color:#fd0371}
+.logo{float:left;height:auto!important;zoom:1}
+.logo-image{display:inline-block;vertical-align:top;font:14px Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;color:#9b9b9b}
+.manual-trans-info{margin-right:17px;position:relative;height:38px;color:#333;float:right;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.manual-trans-info *{-webkit-box-sizing:inherit;-moz-box-sizing:inherit;box-sizing:inherit}
+.manual-trans-info .list-name{position:relative;display:block;width:82px;text-align:center;line-height:38px;border:1px solid transparent}
+.manual-trans-info:hover a{text-decoration:none}
+.manual-trans-info:hover .list-name{border:1px solid #eee;background-color:#fcfcfc}
+.manual-trans-info .list-container{display:none;position:absolute;left:-139px;top:37px;width:360px;border:1px solid #eee;font-size:14px;text-align:center;background-color:#fff;z-index:99}
+.manual-trans-info .list-container{padding:25px 25px 30px}
+.entry-trans-info:hover .list-container{display:block}
+.manual-trans-info .list-container .content-text{height:24px;margin:0;line-height:24px}
+.manual-trans-info .list-container .content-text .content-text-num{color:#4395ff}
+.manual-trans-info .infolist-ul{width:100%;height:100%;list-style:none;margin-top:17px}
+.manual-trans-info .info-li{float:left;width:144px;height:155px;margin:0 5px;border:1px solid #f1f1f1}
+.manual-trans-info .info-li:hover{border:1px solid #00a4ed}
+.manual-trans-info .info-li h1{line-height:14px;margin:16px 0 13px}
+.manual-trans-info .info-li p{font-size:12px;line-height:24px;color:#999}
+.navigation{float:right;zoom:1}
+.navigation li{display:inline-block;*display:inline;*zoom:1;vertical-align:top}
+.navigation li .split-line{margin:0 10px}
+.account-wrap{position:relative;height:36px;z-index:2}
+.account-wrap .arrow-down{margin-left:5px;vertical-align:-2px;_vertical-align:-4px}
+.account-head{line-height:36px;height:36px;display:inline-block;min-width:56px;padding:1px 11px}
+.account-panel{position:absolute;border:1px solid #eee;border-bottom:0;background:#fff;right:0;top:0;min-width:76px;display:none}
+.account-panel li{display:block}
+.account-panel li a{display:block;padding:0 10px;height:36px;line-height:36px;border-bottom:1px solid #eee;text-decoration:none;text-align:left}
+.account-panel li a:hover{background:#fcfcfc}
+.wrap-login .account-head{width:53px;padding-left:24px;padding-right:0}
+.wrap-login .account-panel{min-width:78px}
+.account-panel .account-login,.account-panel .account-register{padding-left:23px}
+.header .inner{*position:relative}
+.browser-edition-tip{position:absolute;left:200px;height:25px;line-height:25px;background:#fffdf0;padding:0 10px}
+.simultaneous-interpretation{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float:right;position:relative;height:38px;color:#666;border:1px solid transparent}
+.simultaneous-interpretation:hover{border:1px solid #eee;background-color:#fcfcfc}
+.simultaneous-interpretation *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.simultaneous-interpretation a{display:inline-block;padding:1px 17px 0;line-height:36px}
+.simultaneous-interpretation a:hover{text-decoration:none}
+.simultaneous-interpretation .icon-hotlk{position:absolute;top:-1px;right:-4px}
+.trans-machine{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float:right;position:relative;height:38px;color:#666;border:1px solid transparent}
+.trans-machine:hover{border:1px solid #eee;background-color:#fcfcfc}
+.trans-machine *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.trans-machine a{display:inline-block;padding:1px 17px 0;line-height:36px}
+.trans-machine a:hover{text-decoration:none}
+.trans-machine .icon-hotlk{position:absolute;top:-1px;right:-4px}
+.trans-machine{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float:right;position:relative;height:38px;color:#666;border:1px solid transparent}
+.trans-machine:hover{border:1px solid #eee;background-color:#fcfcfc}
+.trans-machine *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.trans-machine a{display:inline-block;padding:1px 17px 0;line-height:36px}
+.trans-machine a:hover{text-decoration:none}
+/*!--------------------------------------------------------------------
+STYLES "Outdated Browser"
+Version:    1.1.2 - 2015
+author:     Burocratik
+website:    http://www.burocratik.com
+* @preserve
+-----------------------------------------------------------------------*/
+#outdated{display:none;position:fixed;top:0;left:0;width:100%;height:170px;text-align:center;text-transform:uppercase;z-index:1500;background-color:#f25648;color:#fff}
+* html #outdated{position:absolute}
+#outdated h6{font-size:25px;line-height:25px;margin:30px 0 10px}
+#outdated p{font-size:16px;line-height:12px;margin-top:40px}
+#outdated a{font-weight:700;color:#fff}
+#outdated #btnUpdateBrowser{display:block;position:relative;padding:10px 20px;margin:30px auto 0;width:230px;color:#fff;text-decoration:none;border:2px solid #fff;cursor:pointer}
+#outdated #btnUpdateBrowser:hover{color:#f25648;background-color:#fff}
+#outdated .last{position:absolute;top:10px;right:25px;width:20px;height:20px}
+#outdated .last[dir=rtl]{right:auto!important;left:25px!important}
+#outdated #btnCloseUpdateBrowser{display:block;position:relative;width:100%;height:100%;text-decoration:none;color:#fff;font-size:36px;line-height:36px}
+.scroll-wrapper{overflow:hidden!important;padding:0!important;position:relative}
+.scroll-wrapper>.scroll-content{border:0!important;-webkit-box-sizing:content-box!important;-moz-box-sizing:content-box!important;box-sizing:content-box!important;height:auto;left:0;margin:0;max-height:none;max-width:none!important;overflow:scroll!important;padding:0;position:relative!important;top:0;width:auto!important}
+.scroll-wrapper>.scroll-content::-webkit-scrollbar{height:0;width:0}
+.scroll-element{display:none}
+.scroll-element,.scroll-element div{-webkit-box-sizing:content-box!important;-moz-box-sizing:content-box!important;box-sizing:content-box!important}
+.scroll-element.scroll-x.scroll-scrollx_visible,.scroll-element.scroll-y.scroll-scrolly_visible{display:block}
+.scroll-element .scroll-bar,.scroll-element .scroll-arrow{cursor:default}
+.scroll-textarea{border:1px solid #ccc;border-top-color:#999}
+.scroll-textarea>.scroll-content{overflow:hidden!important}
+.scroll-textarea>.scroll-content>textarea{border:0!important;-webkit-box-sizing:border-box!important;-moz-box-sizing:border-box!important;box-sizing:border-box!important;height:100%!important;margin:0;max-height:none!important;max-width:none!important;overflow:scroll!important;outline:0;padding:2px;position:relative!important;top:0;width:100%!important}
+.scroll-textarea>.scroll-content>textarea::-webkit-scrollbar{height:0;width:0}
+.scrollbar-inner>.scroll-element,.scrollbar-inner>.scroll-element div{border:0;margin:0;padding:0;position:absolute;z-index:10}
+.scrollbar-inner>.scroll-element div{display:block;height:100%;left:0;top:0;width:100%}
+.scrollbar-inner>.scroll-element.scroll-x{bottom:2px;height:8px;left:0;width:100%}
+.scrollbar-inner>.scroll-element.scroll-y{height:100%;right:2px;top:0;width:4px}
+.scrollbar-inner>.scroll-element .scroll-element_outer{overflow:hidden}
+.scrollbar-inner>.scroll-element .scroll-element_outer,.scrollbar-inner>.scroll-element .scroll-element_track,.scrollbar-inner>.scroll-element .scroll-bar{-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px}
+.scrollbar-inner>.scroll-element .scroll-bar{background-color:#e1e1e1}
+.scrollbar-inner>.scroll-element.scroll-draggable .scroll-bar{background-color:#919191}
+.scrollbar-inner>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track{left:-12px}
+.scrollbar-inner>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track{top:-12px}
+.scrollbar-inner>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size{left:-12px}
+.scrollbar-inner>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size{top:-12px}
+.webuploader-container{position:relative}
+.webuploader-element-invisible{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px)}
+.webuploader-pick{position:relative}
+.webuploader-pick-hover{}
+.webuploader-pick-disable{opacity:.6;pointer-events:none}
+
+.inner-te{margin:0 auto}
+@media (max-width:1278px){.inner-te{width:993px}}
+@media (min-width:1279px) and (max-width:1506px){.inner-te{margin:0 143px;width:auto}}
+@media (min-width:1507px){.inner-te{width:1220px}}

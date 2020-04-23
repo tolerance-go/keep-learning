@@ -1,16 +1,18 @@
 {
   "name": "keep-learning",
-  "version": "0.1.0",
-  "main": "index.js",
   "repository": "git@github.com:tolerance-go/keep-learning.git",
   "author": "yarnb <yarnbcoder@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "jest",
     "test:components": "start-storybook",
+    "run:as": "parcel AnswerSheet/index.html",
+    "run:as-server": "nodemon --watch 'AnswerSheet-service/**/*' -e ts --exec 'ts-node' --project tsconfig.server.json ./AnswerSheet-service/index.ts",
     "build": "node ./scripts/generateReadme.js",
-    "build:components": "build-storybook -o components-square",
-    "publish": "npm test && npm run build && npm run build:components && lerna-changelog"
+    "build:components": "build-storybook -o dist-components",
+    "build:as": "parcel build AnswerSheet/index.html",
+    "build:as-server": "tsc --build tsconfig.server.json",
+    "publish": "npm test && npm run build && lerna-changelog"
   },
   "lint-staged": {
     "*.{md,json}": [
@@ -25,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
+      "pre-commit": "npm test && npm run build",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -39,7 +41,7 @@
     }
   },
   "dependencies": {
-    "@types/styled-components": "^5.1.0",
+    "koa": "^2.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "shelljs": "^0.8.3",
@@ -64,6 +66,9 @@
     "@storybook/addons": "^5.3.17",
     "@storybook/react": "^5.3.17",
     "@types/jest": "^25.2.1",
+    "@types/koa": "^2.11.3",
+    "@types/react-dom": "^16.9.6",
+    "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-jest": "^25.3.0",
@@ -78,10 +83,12 @@
     "jest": "^25.3.0",
     "lerna-changelog": "^1.0.1",
     "lint-staged": "^10.1.0",
+    "nodemon": "^2.0.3",
     "prettier": "^2.0.4",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-test-renderer": "^16.13.1",
     "ts-loader": "^7.0.0",
+    "ts-node": "^8.9.0",
     "typescript": "~3.7.2"
   }
 }
