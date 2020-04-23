@@ -1,4 +1,4 @@
-# keep-learning
+# keep-learning &nbsp; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/tolerance-go/keep-learning/blob/master/LICENSE) [![CircleCI Status](https://circleci.com/gh/tolerance-go/keep-learning.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/tolerance-go/keep-learning) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tolerance-go/keep-learning/pulls)
 
 用结构化的问题去解构世界，不断的提高自己的认知水平和解决问题的能力，换句话说，就是用问题建立自己的知识体系，这就是此项目的初衷，具体指标如下
 
@@ -9,6 +9,14 @@
 
 希望我可以带着对未知的渴望和丰富的想象，早日迎来充盈而平静的生活
 
+## 答题试卷 App
+
+[每日答一份试卷，改一份试卷](https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E6%9A%82%E6%9C%AA%E5%AE%8C%E6%88%90&step_word=&hs=0&pn=9&spn=0&di=50410&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=2519627221%2C2147289358&os=956936749%2C375358330&simid=0%2C0&adpicid=0&lpn=0&ln=1132&fr=&fmq=1587633062331_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=11&oriquery=&objurl=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20200409%2Ffde675e68001427ebaaa7fbe17d66572.png&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bf5i7_z%26e3Bv54AzdH3FwAzdH3Fnbmm8mc9d_88mdn0&gsm=a&rpstart=0&rpnum=0&islist=&querylist=&force=undefined)
+
+基于本项目的问题，用户可以选择问题范围，动态生成一份答题试卷，用户可以进行回答并提交，此外还可以对别人的试卷进行审批
+
+## 快捷导航
+
 [更新日志](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [组件广场](https://tolerance-go.github.io/keep-learning/components-square) | [发布策略](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md) | [常念于心](https://github.com/tolerance-go/keep-learning/blob/master/CHANGE_NIAN_YU_XIN.md)
 
 ---
@@ -17,17 +25,21 @@
   - CSS
     - [水平垂直居中布局的方式有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FCSS/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B.md)
   - JS
+    - [new一个对象发生了什么](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FJS/new%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.md)
     - [继承方式有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FJS/%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B.md)
   - babel
   - http(s)
     - [https协议的过程是什么](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/https%E5%8D%8F%E8%AE%AE%E7%9A%84%E8%BF%87%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88.md)
     - [https获取加密密钥的过程是什么](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/https%E8%8E%B7%E5%8F%96%E5%8A%A0%E5%AF%86%E5%AF%86%E9%92%A5%E7%9A%84%E8%BF%87%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88.md)
+    - [http常见的状态码有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/http%E5%B8%B8%E8%A7%81%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81%E6%9C%89%E5%93%AA%E4%BA%9B.md)
     - [http的方法有哪几种](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/http%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D.md)
+    - [浏览器输入url发生了什么](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2Fhttp(s)/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5url%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.md)
   - node
   - react
   - v8
   - webpack
   - 代理
+    - [浏览器渲染页面的过程是什么](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88.md)
     - 跨域
       - [为什么会出现跨域](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%87%BA%E7%8E%B0%E8%B7%A8%E5%9F%9F.md)
       - [什么是跨域](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F/%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F.md)
@@ -38,21 +50,27 @@
 - 算法
   - [Pow(x,n)](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/Pow(x%2Cn).ts)
   - [Z字形变换](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2.js)
+  - [x的平方根](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.ts)
   - [下一个排列](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97.js)
   - [两数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.js)
   - [两数相加](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0.js)
   - [两数相除](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4.js)
   - [串联所有单词的子串](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2.js)
   - [二分法查找](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%B3%95%E6%9F%A5%E6%89%BE.js)
+  - [二进制求和](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C.ts)
   - 分治
     - [合并K个排序链表](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%88%86%E6%B2%BB/%E5%90%88%E5%B9%B6K%E4%B8%AA%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8.js)
   - [删除链表的倒数第N个节点](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9.js)
+  - [加一](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E5%8A%A0%E4%B8%80.ts)
   - 动态规划
+    - [不同路径](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84.ts)
+    - [不同路径2](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%842.ts)
     - [凑零钱](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%87%91%E9%9B%B6%E9%92%B1.js)
     - [接雨水](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%8E%A5%E9%9B%A8%E6%B0%B4.ts)
     - [斐波那契数列](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.js)
+    - [最小路径和](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C.ts)
     - [正则表达式匹配](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D.js)
-    - [爬楼梯](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%88%AC%E6%A5%BC%E6%A2%AF.js)
+    - [爬楼梯](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%88%AC%E6%A5%BC%E6%A2%AF.ts)
     - [通配符匹配](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E9%80%9A%E9%85%8D%E7%AC%A6%E5%8C%B9%E9%85%8D.ts)
   - 双指针
     - [三数之和](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8F%8C%E6%8C%87%E9%92%88/%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C.js)
@@ -79,7 +97,9 @@
   - [搜索旋转排序数组](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84.js)
   - [整数反转](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.js)
   - [整数转罗马数字](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97.js)
+  - [文本左右对齐](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%96%87%E6%9C%AC%E5%B7%A6%E5%8F%B3%E5%AF%B9%E9%BD%90.ts)
   - [旋转图像](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F.ts)
+  - [旋转链表](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%97%8B%E8%BD%AC%E9%93%BE%E8%A1%A8.ts)
   - [无重复字符最长子串](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.js)
   - [最后一个单词的长度](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6.ts)
   - [最大子序和](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.ts)
@@ -88,6 +108,8 @@
   - [最长有效括号](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7.js)
   - [有效的括号](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7.js)
   - [有效的数独](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC.js)
+  - 有限状态机
+    - [有效数字](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA/%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97.ts)
   - [盛最多水的容器](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.js)
   - [第k个排列](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97.ts)
   - [组合总和](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C.js)
