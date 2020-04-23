@@ -26,4 +26,4 @@ const getNodeList = (nums) => {
   return getNode(nums);
 };
 
-module.exports = { delay, ListNode, getNodeList };
+export { delay, ListNode, getNodeList };
