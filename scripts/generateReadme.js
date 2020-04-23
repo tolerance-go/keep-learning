@@ -14,11 +14,33 @@ const paths = {
   readme: path.join(cwd, 'README.md'),
   readmeHead: path.join(cwd, 'README_HEAD.md'),
   treeAsset: path.join(cwd, 'assets/tree.json'),
+  treePathAsset: path.join(cwd, 'assets/treePath.json'),
 };
 
 const tree = {};
 
-const readSrc = (folder = paths.src, node = tree) => {
+const sumOfPath = {};
+
+const addOfPaths = (pathArr) => {
+  let res = [];
+  for (let i = 0; i < pathArr.length; i++) {
+    if (res.length === 0) {
+      res.push(pathArr[i]);
+    } else {
+      res.push(res[res.length - 1] + '-' + pathArr[i]);
+    }
+  }
+
+  res.forEach((pathItem) => {
+    if (sumOfPath[pathItem] != null) {
+      sumOfPath[pathItem]++;
+    } else {
+      sumOfPath[pathItem] = 1;
+    }
+  });
+};
+
+const readSrc = (folder = paths.src, node = tree, pathArr = ['root']) => {
   const files = fs.readdirSync(folder);
   files.forEach((file) => {
     const p = path.join(folder, file);
@@ -33,11 +55,12 @@ const readSrc = (folder = paths.src, node = tree) => {
       node[name] = {
         [folderFlag]: true,
       };
-      readSrc(p, node[name]);
+      readSrc(p, node[name], [...pathArr, name]);
       return;
     }
 
     node[name] = meta;
+    addOfPaths(pathArr);
   });
 
   return node;
@@ -48,15 +71,26 @@ const writeReadme = () => {
     flag: 'w',
   });
 
-  const eachTree = (node, parents = '', level = 0) => {
+  fs.writeFileSync(paths.readme, `总数(${sumOfPath.root})\n\n`, {
+    flag: 'a',
+  });
+
+  const eachTree = (node, pathStr = 'root', parents = '', level = 0) => {
     for (let file in node) {
       if (file === folderFlag) continue;
 
       if (typeof node[file] === 'object' && node[file][folderFlag]) {
-        fs.writeFileSync(paths.readme, `${'  '.repeat(level)}- ${file}\n`, {
-          flag: 'a',
-        });
-        eachTree(node[file], path.join(parents, file), level + 1);
+        const nextPathStr = pathStr + '-' + file;
+        fs.writeFileSync(
+          paths.readme,
+          `${'  '.repeat(level)}- ${file}${
+            sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
+          }\n`,
+          {
+            flag: 'a',
+          },
+        );
+        eachTree(node[file], nextPathStr, path.join(parents, file), level + 1);
         continue;
       }
       fs.writeFileSync(
@@ -79,6 +113,7 @@ const writeReadme = () => {
 
 const exportTree = () => {
   fs.writeFileSync(paths.treeAsset, JSON.stringify(tree));
+  fs.writeFileSync(paths.treePathAsset, JSON.stringify(sumOfPath));
 };
 
 readSrc();
