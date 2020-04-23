@@ -5,13 +5,15 @@ const shell = require('shelljs');
 const cwd = process.cwd();
 const folderFlag = 'folder';
 
-const branchName = shell.exec('git rev-parse --abbrev-ref HEAD').trim();
+// const branchName = shell.exec('git rev-parse --abbrev-ref HEAD').trim();
+const branchName = 'master';
 
 const paths = {
   src: path.join(cwd, 'src'),
   utils: path.join(cwd, 'src/utils.js'),
   readme: path.join(cwd, 'README.md'),
   readmeHead: path.join(cwd, 'README_HEAD.md'),
+  treeAsset: path.join(cwd, 'assets/tree.json'),
 };
 
 const tree = {};
@@ -75,5 +77,10 @@ const writeReadme = () => {
   eachTree(tree);
 };
 
+const exportTree = () => {
+  fs.writeFileSync(paths.treeAsset, JSON.stringify(tree));
+};
+
 readSrc();
+exportTree();
 writeReadme();

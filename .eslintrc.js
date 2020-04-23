@@ -4,6 +4,7 @@ module.exports = {
     node: true,
     'jest/globals': true,
     es6: true,
+    browser: true,
   },
   parser: '@typescript-eslint/parser',
   extends: [
