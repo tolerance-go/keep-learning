@@ -79,7 +79,7 @@ const writeReadme = () => {
     for (let file in node) {
       if (file === folderFlag) continue;
       if (file === 'index') continue;
-      if (file.endsWith('visual')) continue;
+      if (file.endsWith('visual') || file.endsWith('service')) continue;
 
       if (typeof node[file] === 'object' && node[file][folderFlag]) {
         const nextPathStr = pathStr + '-' + file;
@@ -118,6 +118,7 @@ const writeReadme = () => {
       }
 
       const hasVisual = !!node[file + '.visual'];
+      const hasService = !!node[file + '.service'];
 
       fs.writeFileSync(
         paths.readme,
@@ -129,6 +130,12 @@ const writeReadme = () => {
         )}) ${
           hasVisual
             ? `[:stars:](https://tolerance-go.github.io/keep-learning/components-square/?path=/story/${encodeURIComponent(
+                file,
+              )}--flex)`
+            : ''
+        } ${
+          hasService
+            ? `[:zap:](https://tolerance-go.github.io/keep-learning/components-square/?path=/story/${encodeURIComponent(
                 file,
               )}--flex)`
             : ''

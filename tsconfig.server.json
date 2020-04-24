@@ -3,5 +3,5 @@
   "compilerOptions": {
     "outDir": "dist-server"
   },
-  "include": ["service"]
+  "include": ["service", "src/**/*.service.ts"]
 }
