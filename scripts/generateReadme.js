@@ -78,18 +78,40 @@ const writeReadme = () => {
   const eachTree = (node, pathStr = 'root', parents = '', level = 0) => {
     for (let file in node) {
       if (file === folderFlag) continue;
+      if (file === 'index') continue;
 
       if (typeof node[file] === 'object' && node[file][folderFlag]) {
         const nextPathStr = pathStr + '-' + file;
-        fs.writeFileSync(
-          paths.readme,
-          `${'  '.repeat(level)}- ${file}${
-            sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
-          }\n`,
-          {
-            flag: 'a',
-          },
-        );
+
+        // 如果目录下存在 index，则设置链接
+        if ('index' in node[file]) {
+          fs.writeFileSync(
+            paths.readme,
+            `${'  '.repeat(
+              level,
+            )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+              encodeURIComponent(parents),
+              encodeURIComponent(file),
+              encodeURIComponent(node[file].index.base),
+            )})${
+              sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
+            }\n`,
+            {
+              flag: 'a',
+            },
+          );
+        } else {
+          fs.writeFileSync(
+            paths.readme,
+            `${'  '.repeat(level)}- ${file}${
+              sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
+            }\n`,
+            {
+              flag: 'a',
+            },
+          );
+        }
+
         eachTree(node[file], nextPathStr, path.join(parents, file), level + 1);
         continue;
       }
