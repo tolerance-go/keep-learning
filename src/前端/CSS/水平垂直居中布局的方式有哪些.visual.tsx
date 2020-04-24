@@ -22,7 +22,7 @@ export const Flex = () => {
     justify-content: center;
   `;
   const ChildOfImg = styled.img.attrs(() => ({
-    src: require('../../assets/hzw.jpeg'),
+    src: require('assets/hzw.jpeg'),
   }))`
     width: 100px;
     height: ${imgHeight}px;
@@ -88,7 +88,7 @@ export const LineHeightAndVerticalAlign = () => {
     text-align: center;
   `;
   const ChildOfImg = styled.img.attrs(() => ({
-    src: require('../../assets/hzw.jpeg'),
+    src: require('assets/hzw.jpeg'),
   }))`
     width: 100px;
     height: ${imgHeight}px;
@@ -135,7 +135,7 @@ export const VerticalAlign = () => {
     text-align: center;
   `;
   const ChildOfImg = styled.img.attrs(() => ({
-    src: require('../../assets/hzw.jpeg'),
+    src: require('assets/hzw.jpeg'),
   }))`
     width: 100px;
     height: ${imgHeight}px;
@@ -214,7 +214,7 @@ export const TableCell = () => {
   `;
 
   const ChildOfImg = styled.img.attrs(() => ({
-    src: require('../../assets/hzw.jpeg'),
+    src: require('assets/hzw.jpeg'),
   }))`
     width: 100px;
     height: ${imgHeight}px;
@@ -280,7 +280,7 @@ export const AbsoluteMargin = () => {
   `;
 
   const ChildOfImg = styled.img.attrs(() => ({
-    src: require('../../assets/hzw.jpeg'),
+    src: require('assets/hzw.jpeg'),
   }))`
     width: 100px;
     height: ${imgHeight}px;
@@ -351,7 +351,7 @@ export const AbsoluteMargin2 = () => {
   `;
 
   const ChildOfImg = styled.img.attrs(() => ({
-    src: require('../../assets/hzw.jpeg'),
+    src: require('assets/hzw.jpeg'),
   }))`
     width: 100px;
     height: ${imgHeight}px;
@@ -422,7 +422,7 @@ export const AbsoluteTransform = () => {
   `;
 
   const ChildOfImg = styled.img.attrs(() => ({
-    src: require('../../assets/hzw.jpeg'),
+    src: require('assets/hzw.jpeg'),
   }))`
     width: 100px;
     height: ${imgHeight}px;

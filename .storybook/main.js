@@ -2,7 +2,7 @@ const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
-  stories: ['../components/**/*.stories.tsx'],
+  stories: ['../src/**/*.visual.tsx'],
   addons: [
     '@storybook/addon-knobs',
     '@storybook/addon-actions',
