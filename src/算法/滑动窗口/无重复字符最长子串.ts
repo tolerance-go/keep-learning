@@ -26,7 +26,7 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = function (s) {
+const lengthOfLongestSubstring = (s) => {
   let i = 0,
     res = 0,
     n = 0;
@@ -41,4 +41,4 @@ var lengthOfLongestSubstring = function (s) {
   return res;
 };
 
-module.exports = lengthOfLongestSubstring;
+export default lengthOfLongestSubstring;
