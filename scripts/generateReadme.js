@@ -79,6 +79,7 @@ const writeReadme = () => {
     for (let file in node) {
       if (file === folderFlag) continue;
       if (file === 'index') continue;
+      if (file.endsWith('visual')) continue;
 
       if (typeof node[file] === 'object' && node[file][folderFlag]) {
         const nextPathStr = pathStr + '-' + file;
@@ -115,6 +116,9 @@ const writeReadme = () => {
         eachTree(node[file], nextPathStr, path.join(parents, file), level + 1);
         continue;
       }
+
+      const hasVisual = !!node[file + '.visual'];
+
       fs.writeFileSync(
         paths.readme,
         `${'  '.repeat(
@@ -122,7 +126,13 @@ const writeReadme = () => {
         )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
           encodeURIComponent(parents),
           encodeURIComponent(node[file].base),
-        )})\n`,
+        )}) ${
+          hasVisual
+            ? `[:stars:](https://tolerance-go.github.io/keep-learning/components-square/?path=/story/${encodeURIComponent(
+                file,
+              )}--flex)`
+            : ''
+        }\n`,
         {
           flag: 'a',
         },
