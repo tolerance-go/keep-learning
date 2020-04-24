@@ -19,7 +19,7 @@
 
 ---
 
-总数(93)
+总数(94)
 
 - git(1)
   - [如何删除stash](https://github.com/tolerance-go/keep-learning/blob/master/src/git/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4stash.md)
@@ -49,7 +49,7 @@
       - [跨域受限制的场景有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F/%E8%B7%A8%E5%9F%9F%E5%8F%97%E9%99%90%E5%88%B6%E7%9A%84%E5%9C%BA%E6%99%AF%E6%9C%89%E5%93%AA%E4%BA%9B.md)
   - 最佳实践(1)
     - [如何实现无限滚动](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%97%A0%E9%99%90%E6%BB%9A%E5%8A%A8.md)
-- 算法(78)
+- 算法(79)
   - [Pow(x,n)](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/Pow(x%2Cn).ts)
   - [Z字形变换](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2.js)
   - [x的平方根](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.ts)
@@ -114,7 +114,7 @@
   - [有效的数独](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC.js)
   - 有限状态机(1)
     - [有效数字](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA/%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97.ts)
-  - 滑动窗口(1)
+  - [滑动窗口](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/index.md)(2)
     - [无重复字符最长子串](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.ts)
   - [盛最多水的容器](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.js)
   - [矩阵置零](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6.ts)
