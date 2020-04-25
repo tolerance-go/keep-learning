@@ -50,8 +50,8 @@ jobs:
       - run:
           name: Deploy
           command: |
-            ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_SERVER_PATH && mkdir -p $REMOTE_SERVER_PATH"
-            ssh $REMOTE_USERNAME@$REMOTE_IP "cd $REMOTE_SERVER_PATH && git clone git@github.com:tolerance-go/keep-learning.git . && yarn install && yarn build:visual && yarn build:server && pm2 restart ./dist-server/service/index.js"
+            ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_KL_PATH && mkdir -p $REMOTE_KL_PATH"
+            ssh $REMOTE_USERNAME@$REMOTE_IP "cd $REMOTE_KL_PATH && git clone git@github.com:tolerance-go/keep-learning.git . && yarn install && yarn build:visual && yarn build:server && pm2 restart ./dist-server/service/index.js"
 
 workflows:
   version: 2.1
