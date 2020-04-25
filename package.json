@@ -14,7 +14,10 @@
     "build:server": "tsc --build tsconfig.server.json",
     "build:as-app": "parcel build -d dist-as-app AnswerSheet/index.html",
     "build:as-server": "tsc --build tsconfig.as-server.json",
-    "publish": "npm test && npm run build && lerna-changelog"
+    "publish": "npm test && npm run build && lerna-changelog",
+    "build:all": "yarn build && yarn build:server && yarn build:visual",
+    "clean": "rimraf dist-visual dist-server dist-as-server dist-as-app"
+
   },
   "lint-staged": {
     "*.{md,json}": [
@@ -91,6 +94,7 @@
     "prettier": "^2.0.4",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-test-renderer": "^16.13.1",
+    "rimraf": "^3.0.2",
     "ts-loader": "^7.0.0",
     "ts-node": "^8.9.0",
     "typescript": "~3.7.2"

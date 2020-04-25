@@ -50,8 +50,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_KL_PATH && mkdir -p $REMOTE_KL_PATH"
-            ssh $REMOTE_USERNAME@$REMOTE_IP "cd $REMOTE_KL_PATH && git clone git@github.com:tolerance-go/keep-learning.git . && yarn install && yarn build:visual && yarn build:server && pm2 restart ./dist-server/service/index.js"
+            ssh $REMOTE_USERNAME@$REMOTE_IP "cd $REMOTE_KL_PATH && git checkout master && git pull origin master && yarn upgrade --frozen-lockfile && yarn clean && yarn build:all && pm2 restart ./dist-server/service/index.js"
 
 workflows:
   version: 2.1
@@ -67,4 +66,4 @@ workflows:
             - test
           filters:
             branches:
-              only: /feat\/src-xxx\.service\.ts|master/
+              only: master
