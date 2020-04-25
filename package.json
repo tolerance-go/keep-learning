@@ -5,15 +5,15 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "test:components": "start-storybook",
+    "run:visual": "start-storybook",
     "run:server": "nodemon --watch 'service/**/*' -e ts --exec 'ts-node' --project tsconfig.server.json ./service/index.ts",
     "run:as-app": "parcel AnswerSheet/index.html",
     "run:as-server": "nodemon --watch 'AnswerSheet-service/**/*' -e ts --exec 'ts-node' --project tsconfig.as-server.json ./AnswerSheet-service/index.ts",
     "build": "node ./scripts/generateReadme.js",
-    "build:components": "build-storybook -o dist-components",
+    "build:visual": "build-storybook -o dist-visual",
+    "build:server": "tsc --build tsconfig.server.json",
     "build:as-app": "parcel build -d dist-as-app AnswerSheet/index.html",
     "build:as-server": "tsc --build tsconfig.as-server.json",
-    "build:server": "tsc --build tsconfig.server.json",
     "publish": "npm test && npm run build && lerna-changelog"
   },
   "lint-staged": {
@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "koa": "^2.11.0",
+    "koa-router": "^8.0.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "shelljs": "^0.8.3",
@@ -69,6 +70,7 @@
     "@storybook/react": "^5.3.17",
     "@types/jest": "^25.2.1",
     "@types/koa": "^2.11.3",
+    "@types/koa-router": "^7.4.0",
     "@types/react-dom": "^16.9.6",
     "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",

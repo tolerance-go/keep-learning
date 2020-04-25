@@ -84,7 +84,7 @@ web_modules/
 dist-as-app
 dist-as-server
 dist-server
-dist-components
+dist-visual
 
 # Gatsby files
 .cache/

@@ -36,6 +36,25 @@ jobs:
           name: Test
           command: yarn test
 
+  build_deploy:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - *restore_yarn_cache
+      - *run_yarn
+      - run:
+          name: Build All
+          command: yarn build && yarn build:visual && yarn build:server
+      - run: echo $REMOTE_HOSTKEY >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy
+          command: |
+            ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_SERVER_PATH && mkdir -p $REMOTE_SERVER_PATH"
+            scp -r ./dist-server/* $REMOTE_USERNAME@$REMOTE_IP:$REMOTE_SERVER_PATH
+            ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_VISUAL_PATH && mkdir -p $REMOTE_VISUAL_PATH"
+            scp -r ./dist-visual/* $REMOTE_USERNAME@$REMOTE_IP:$REMOTE_VISUAL_PATH
+
 workflows:
   version: 2.1
   default:
@@ -44,3 +63,10 @@ workflows:
       - test:
           requires:
             - setup
+      - build_deploy:
+          context: SERVER_TOKEN
+          requires:
+            - test
+          filters:
+            branches:
+              only: /feat\/src-xxx\.service\.ts|master/

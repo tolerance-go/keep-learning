@@ -9,6 +9,6 @@
 
 ## 快捷导航
 
-[更新日志](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [组件广场](https://tolerance-go.github.io/keep-learning/components-square) | [发布策略](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md) | [常念于心](https://github.com/tolerance-go/keep-learning/blob/master/CHANGE_NIAN_YU_XIN.md)
+[更新日志](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [可视化大厅](https://tolerance-go.github.io/keep-learning/components-square) | [发布策略](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md) | [常念于心](https://github.com/tolerance-go/keep-learning/blob/master/CHANGE_NIAN_YU_XIN.md)
 
 ---
