@@ -17,9 +17,6 @@ jobs:
       - image: circleci/node:lts
     steps:
       - checkout
-      - add_ssh_keys:
-        fingerprints:
-          - '1f:df:07:38:f5:1a:89:0b:c6:10:5b:2f:8e:dd:d5:27'
       - *restore_yarn_cache
       - *run_yarn
       - save_cache:
@@ -39,7 +36,7 @@ jobs:
           name: Test
           command: yarn test
 
-  build:
+  build_deploy:
     docker:
       - image: circleci/node:lts
     steps:
@@ -49,22 +46,7 @@ jobs:
       - run:
           name: Build All
           command: yarn build && yarn build:visual && yarn build:server
-      - save_cache:
-          name: Save Build Cache
-          key: build-cache
-          paths:
-            - ./dist-server
-            - ./dist-visual
-
-  deploy:
-    docker:
-      - image: circleci/node:lts
-    steps:
-      - checkout
-      - restore_cache:
-          name: Restore Build Cache
-          keys:
-            - build-cache
+      - run: echo $REMOTE_HOSTKEY >> ~/.ssh/known_hosts
       - run:
           name: Deploy
           command: |
@@ -81,16 +63,10 @@ workflows:
       - test:
           requires:
             - setup
-      - build:
+      - build_deploy:
+          context: SERVER_TOKEN
           requires:
             - test
           filters:
             branches:
-              only: /feat\/src-xxx\.service\.ts/
-      - deploy:
-          context: SERVER_TOKEN
-          requires:
-            - build
-          filters:
-            branches:
-              only: /feat\/src-xxx\.service\.ts/
+              only: /feat\/src-xxx\.service\.ts|master/
