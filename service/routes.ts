@@ -4,10 +4,8 @@ import path from 'path';
 
 const router = new Router();
 
-const cwd = process.cwd();
-
 const paths = {
-  src: path.join(cwd, 'src'),
+  src: path.join(__dirname, '../src'),
 };
 
 const load = (folder = paths.src) => {
@@ -33,6 +31,8 @@ const load = (folder = paths.src) => {
     }
   });
 };
+
+router.get('/', async (ctx) => (ctx.body = 'hello world'));
 
 load();
 

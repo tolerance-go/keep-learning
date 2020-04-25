@@ -36,24 +36,21 @@ jobs:
           name: Test
           command: yarn test
 
-  build_deploy:
+  trigger_update:
     docker:
       - image: circleci/node:lts
     steps:
       - checkout
       - *restore_yarn_cache
       - *run_yarn
-      - run:
-          name: Build All
-          command: yarn build && yarn build:visual && yarn build:server
+      - add_ssh_keys:
+          fingerprints:
+            - "46:71:0e:84:a2:5c:18:a1:a6:6f:17:a1:29:04:19:ea"
       - run: echo $REMOTE_HOSTKEY >> ~/.ssh/known_hosts
       - run:
           name: Deploy
           command: |
-            ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_SERVER_PATH && mkdir -p $REMOTE_SERVER_PATH"
-            scp -r ./dist-server/* $REMOTE_USERNAME@$REMOTE_IP:$REMOTE_SERVER_PATH
-            ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_VISUAL_PATH && mkdir -p $REMOTE_VISUAL_PATH"
-            scp -r ./dist-visual/* $REMOTE_USERNAME@$REMOTE_IP:$REMOTE_VISUAL_PATH
+            ssh $REMOTE_USERNAME@$REMOTE_IP "cd $REMOTE_KL_PATH && git checkout master && git pull origin master && yarn upgrade --frozen-lockfile && yarn clean && yarn build:all && pm2 restart ./dist-server/service/index.js"
 
 workflows:
   version: 2.1
@@ -63,10 +60,10 @@ workflows:
       - test:
           requires:
             - setup
-      - build_deploy:
+      - trigger_update:
           context: SERVER_TOKEN
           requires:
             - test
           filters:
             branches:
-              only: /feat\/src-xxx\.service\.ts|master/
+              only: master
