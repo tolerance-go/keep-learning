@@ -9,7 +9,7 @@
 
 ## 快捷导航
 
-[更新日志](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [可视化大厅](http://47.92.70.143:8000) | [接口大厅](http://47.92.70.143:8000/api-playground) | [发布策略](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md) | [常念于心](https://github.com/tolerance-go/keep-learning/blob/master/CHANGE_NIAN_YU_XIN.md)
+[更新日志](https://github.com/tolerance-go/keep-learning/blob/master/CHANGELOG.md) | [可视化大厅](http://47.92.70.143:8000) | [接口大厅](http://47.92.70.143:3000/api-playground) | [发布策略](https://github.com/tolerance-go/keep-learning/blob/master/PUBLISH_STRATEGY.md) | [常念于心](https://github.com/tolerance-go/keep-learning/blob/master/CHANGE_NIAN_YU_XIN.md)
 
 ---
 
