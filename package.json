@@ -12,12 +12,13 @@
     "build": "node ./scripts/generateReadme.js",
     "build:visual": "build-storybook -o dist-visual",
     "build:server": "tsc --build tsconfig.server.json",
+    "build:server:apidoc": "swagger-jsdoc src/**/*.service.ts -d swaggerDef.js -o public/swagger.json",
     "build:as-app": "parcel build -d dist-as-app AnswerSheet/index.html",
     "build:as-server": "tsc --build tsconfig.as-server.json",
+    "build:as-server:apidoc": "swagger-jsdoc src/**/*.service.ts -d swaggerDef-as.js -o AnswerSheet-service-public/swagger.json",
     "publish": "npm test && npm run build && lerna-changelog",
     "build:all": "yarn build && yarn build:server && yarn build:visual",
     "clean": "rimraf dist-visual dist-server dist-as-server dist-as-app"
-
   },
   "lint-staged": {
     "*.{md,json}": [
@@ -32,7 +33,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test && npm run build",
+      "pre-commit": "yarn test && yarn build && yarn build:server:apidoc",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -88,6 +89,8 @@
     "fork-ts-checker-webpack-plugin": "^4.1.3",
     "husky": "^4.2.5",
     "jest": "^25.3.0",
+    "koa-static": "^5.0.0",
+    "koa2-swagger-ui": "^3.0.0",
     "lerna-changelog": "^1.0.1",
     "lint-staged": "^10.1.0",
     "nodemon": "^2.0.3",
@@ -95,6 +98,7 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "react-test-renderer": "^16.13.1",
     "rimraf": "^3.0.2",
+    "swagger-jsdoc": "^4.0.0",
     "ts-loader": "^7.0.0",
     "ts-node": "^8.9.0",
     "typescript": "~3.7.2"
