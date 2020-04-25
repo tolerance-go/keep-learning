@@ -13,13 +13,13 @@
 
 ---
 
-总数(96)
+总数(97)
 
 - git(1)
   - [如何删除stash](https://github.com/tolerance-go/keep-learning/blob/master/src/git/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4stash.md)  
 - 前端(16)
   - CSS(3)
-    - [水平垂直居中布局的方式有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FCSS/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B.md) [:stars:](https://tolerance-go.github.io/keep-learning/components-square/?path=/story/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B--flex) [:zap:](https://tolerance-go.github.io/keep-learning/components-square/?path=/story/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B--flex)
+    - [水平垂直居中布局的方式有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FCSS/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B.md) [:stars:](http://47.92.70.143:8000/?path=/story/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B--flex) [:zap:](http://47.92.70.143:3000/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B--flex)
   - JS(2)
     - [new一个对象发生了什么](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FJS/new%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.md)  
     - [继承方式有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2FJS/%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B.md)  
@@ -43,7 +43,7 @@
       - [跨域受限制的场景有哪些](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F/%E8%B7%A8%E5%9F%9F%E5%8F%97%E9%99%90%E5%88%B6%E7%9A%84%E5%9C%BA%E6%99%AF%E6%9C%89%E5%93%AA%E4%BA%9B.md)  
   - 最佳实践(1)
     - [如何实现无限滚动](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%89%8D%E7%AB%AF%2F%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%97%A0%E9%99%90%E6%BB%9A%E5%8A%A8.md)  
-- 算法(79)
+- 算法(80)
   - [Pow(x,n)](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/Pow(x%2Cn).ts)  
   - [Z字形变换](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2.js)  
   - [x的平方根](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.ts)  
@@ -101,6 +101,7 @@
   - [旋转链表](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%97%8B%E8%BD%AC%E9%93%BE%E8%A1%A8.ts)  
   - [最后一个单词的长度](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6.ts)  
   - [最大子序和](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.ts)  
+  - [最小覆盖子串](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2.ts)  
   - [最长公共前缀](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80.js)  
   - [最长回文子串](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2.js)  
   - [最长有效括号](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95/%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7.js)  

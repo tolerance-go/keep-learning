@@ -129,13 +129,13 @@ const writeReadme = () => {
           encodeURIComponent(node[file].base),
         )}) ${
           hasVisual
-            ? `[:stars:](https://tolerance-go.github.io/keep-learning/components-square/?path=/story/${encodeURIComponent(
+            ? `[:stars:](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
                 file,
               )}--flex)`
             : ''
         } ${
           hasService
-            ? `[:zap:](https://tolerance-go.github.io/keep-learning/components-square/?path=/story/${encodeURIComponent(
+            ? `[:zap:](http://47.92.70.143:3000/${encodeURIComponent(
                 file,
               )}--flex)`
             : ''

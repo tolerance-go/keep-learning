@@ -22,7 +22,7 @@ const load = (folder = paths.src) => {
       return;
     }
 
-    if (/.*\.service.tsx?$/.test(file)) {
+    if (/.*\.service.(t|j)sx?$/.test(file)) {
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       const { default: apiGenerator } = require(ps);
       // remove .service
