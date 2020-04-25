@@ -43,6 +43,9 @@ jobs:
       - checkout
       - *restore_yarn_cache
       - *run_yarn
+      - add_ssh_keys:
+          fingerprints:
+            - "46:71:0e:84:a2:5c:18:a1:a6:6f:17:a1:29:04:19:ea"
       - run:
           name: Build All
           command: yarn build && yarn build:visual && yarn build:server
