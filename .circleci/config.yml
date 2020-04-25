@@ -53,10 +53,15 @@ jobs:
       - run:
           name: Deploy
           command: |
+            gzip -r ./dist-server
+            gzip -r ./dist-visual
             ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_SERVER_PATH && mkdir -p $REMOTE_SERVER_PATH"
-            scp -r ./dist-server/* $REMOTE_USERNAME@$REMOTE_IP:$REMOTE_SERVER_PATH
             ssh $REMOTE_USERNAME@$REMOTE_IP "rm -rf $REMOTE_VISUAL_PATH && mkdir -p $REMOTE_VISUAL_PATH"
+            scp -r ./dist-server/* $REMOTE_USERNAME@$REMOTE_IP:$REMOTE_SERVER_PATH
             scp -r ./dist-visual/* $REMOTE_USERNAME@$REMOTE_IP:$REMOTE_VISUAL_PATH
+            ssh $REMOTE_USERNAME@$REMOTE_IP "gzip -r -d $REMOTE_SERVER_PATH"
+            ssh $REMOTE_USERNAME@$REMOTE_IP "gzip -r -d $REMOTE_VISUAL_PATH"
+            pm2 restart $REMOTE_SERVER_PATH/service/index.js
 
 workflows:
   version: 2.1
