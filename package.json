@@ -95,6 +95,7 @@
     "lerna-changelog": "^1.0.1",
     "lint-staged": "^10.1.0",
     "nodemon": "^2.0.3",
+    "parcel": "^1.12.4",
     "prettier": "^2.0.4",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-test-renderer": "^16.13.1",
