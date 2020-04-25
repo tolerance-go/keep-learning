@@ -7,7 +7,7 @@
     "test": "jest",
     "run:visual": "start-storybook",
     "run:server": "nodemon --watch 'service/**/*' -e ts --exec 'ts-node' --project tsconfig.server.json ./service/index.ts",
-    "run:as-app": "parcel AnswerSheet/index.html",
+    "run:as-app": "parcel -p 8001 AnswerSheet/index.html",
     "run:as-server": "nodemon --watch 'AnswerSheet-service/**/*' -e ts --exec 'ts-node' --project tsconfig.as-server.json ./AnswerSheet-service/index.ts",
     "build": "node ./scripts/generateReadme.js",
     "build:visual": "build-storybook -o dist-visual",
@@ -15,7 +15,8 @@
     "build:server:apidoc": "swagger-jsdoc src/**/*.service.ts -d swaggerDef.js -o public/swagger.json",
     "build:as-app": "parcel build -d dist-as-app AnswerSheet/index.html",
     "build:as-server": "tsc --build tsconfig.as-server.json",
-    "build:as-server:apidoc": "swagger-jsdoc src/**/*.service.ts -d swaggerDef-as.js -o AnswerSheet-service-public/swagger.json",
+    "build:as-server:apidoc": "swagger-jsdoc AnswerSheet-service/api/**/*.ts -d swaggerDef-as.js -o AnswerSheet-service-public/swagger.json",
+    "build:apidoc": "yarn build:server:apidoc && yarn build:as-server:apidoc",
     "publish": "npm test && npm run build && lerna-changelog",
     "build:all": "yarn build && yarn build:server && yarn build:visual",
     "clean": "rimraf dist-visual dist-server dist-as-server dist-as-app"
@@ -33,7 +34,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn build && yarn build:server:apidoc",
+      "pre-commit": "yarn test && yarn build && yarn build:apidoc",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

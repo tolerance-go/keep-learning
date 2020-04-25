@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            ssh $REMOTE_USERNAME@$REMOTE_IP "cd $REMOTE_KL_PATH && git checkout master && git checkout . && git pull origin master && yarn upgrade --frozen-lockfile && yarn clean && yarn build:all && pm2 restart ./dist-server/service/index.js"
+            ssh $REMOTE_USERNAME@$REMOTE_IP "cd $REMOTE_KL_PATH && git checkout master && git checkout . && git pull origin master && yarn upgrade --frozen-lockfile && yarn clean && yarn build:all && pm2 restart ./dist-server/service/index.js && pm2 restart ./dist-as-server/index.js"
 
 workflows:
   version: 2.1

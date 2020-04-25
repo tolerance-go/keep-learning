@@ -1,0 +1,29 @@
+{
+  "info": {
+    "title": "AnswerSheet API Playground",
+    "version": "1.0.0",
+    "description": "接口集合"
+  },
+  "basePath": "/",
+  "swagger": "2.0",
+  "paths": {
+    "/test": {
+      "get": {
+        "description": "测试接口",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "test ok"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "responses": {},
+  "parameters": {},
+  "securityDefinitions": {},
+  "tags": []
+}
