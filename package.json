@@ -18,7 +18,7 @@
     "build:as-server:apidoc": "swagger-jsdoc AnswerSheet-service/api/**/*.ts -d swaggerDef-as.js -o AnswerSheet-service-public/swagger.json",
     "build:apidoc": "yarn build:server:apidoc && yarn build:as-server:apidoc",
     "publish": "npm test && npm run build && lerna-changelog",
-    "build:all": "yarn build && yarn build:server && yarn build:visual",
+    "build:all": "yarn build && yarn build:server && yarn build:visual && yarn build:as-server && yarn build:as-app",
     "clean": "rimraf dist-visual dist-server dist-as-server dist-as-app"
   },
   "lint-staged": {
