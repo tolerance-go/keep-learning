@@ -6,6 +6,7 @@ aliases:
       name: Restore Node_modules Cache
       keys:
         - yarn-packages-{{ checksum "yarn.lock" }}
+        - yarn-packages-
   - &run_yarn
     run:
       name: Install Packages

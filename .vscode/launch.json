@@ -19,11 +19,22 @@
       ]
     },
     {
+      "name": "Current TS File",
       "type": "node",
       "request": "launch",
-      "name": "test",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/src/算法/test.js"
-    },
+      "args": [
+        "${relativeFile}"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
   ]
 }                                                                                                                     |

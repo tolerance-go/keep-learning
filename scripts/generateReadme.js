@@ -79,7 +79,12 @@ const writeReadme = () => {
     for (let file in node) {
       if (file === folderFlag) continue;
       if (file === 'index') continue;
-      if (file.endsWith('visual') || file.endsWith('service')) continue;
+      if (
+        file.endsWith('visual') ||
+        file.endsWith('service') ||
+        file.endsWith('test')
+      )
+        continue;
 
       if (typeof node[file] === 'object' && node[file][folderFlag]) {
         const nextPathStr = pathStr + '-' + file;
@@ -119,6 +124,7 @@ const writeReadme = () => {
 
       const hasVisual = !!node[file + '.visual'];
       const hasService = !!node[file + '.service'];
+      const hasTest = !!node[file + '.test'];
 
       fs.writeFileSync(
         paths.readme,
@@ -127,16 +133,21 @@ const writeReadme = () => {
         )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
           encodeURIComponent(parents),
           encodeURIComponent(node[file].base),
-        )}) ${
+        )})${
           hasVisual
-            ? `[:stars:](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
+            ? ` [:stars:](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
                 file,
               )})`
             : ''
-        } ${
+        }${
           hasService
-            ? `[:zap:](http://47.92.70.143:3000/${encodeURIComponent(
-                file,
+            ? ` [:zap:](http://47.92.70.143:3000/${encodeURIComponent(file)})`
+            : ''
+        }${
+          hasTest
+            ? ` [:heavy_check_mark:](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+                encodeURIComponent(parents),
+                encodeURIComponent(node[file + '.test'].base),
               )})`
             : ''
         }\n`,
