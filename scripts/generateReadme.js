@@ -135,17 +135,17 @@ const writeReadme = () => {
           encodeURIComponent(node[file].base),
         )})${
           hasVisual
-            ? ` [:stars:](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
+            ? ` [🌈](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
                 file,
               )})`
             : ''
         }${
           hasService
-            ? ` [:zap:](http://47.92.70.143:3000/${encodeURIComponent(file)})`
+            ? ` [🍕](http://47.92.70.143:3000/${encodeURIComponent(file)})`
             : ''
         }${
           hasTest
-            ? ` [:heavy_check_mark:](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+            ? ` [⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
                 encodeURIComponent(parents),
                 encodeURIComponent(node[file + '.test'].base),
               )})`
