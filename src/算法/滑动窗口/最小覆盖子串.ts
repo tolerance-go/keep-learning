@@ -16,47 +16,54 @@
  */
 
 /**
+ * 定义 window 记录窗口里面所有字符出现的次数，定义 needs 定义 t 单词所有字母出现的次数
+ * 有 l，r 2个指针去遍历 s，r 是快指针，只要下一个元素在 needs 里面，就移动一位，如果 windows 里面
+ * 出现了所有 needs 出现的单词，l 开始移动，保证 windows 里出现所有 needs 单词的前提下，去除重复，更新
+ * 最小长度
+ *
  * @param {string} s
  * @param {string} t
  * @return {string}
  */
 const minWindow = (s, t) => {
-  const res = '';
-  let left = 0,
-    right = 0;
-  const needs = {};
-  const windows = {};
-  let match = 0,
-    start = 0,
+  let l = 0,
+    r = 0,
     minLen = Number.MAX_SAFE_INTEGER;
+  let match = 0;
+  const window = {};
+  const needs = {};
   for (let i = 0; i < t.length; i++) {
     needs[t[i]] ? needs[t[i]]++ : (needs[t[i]] = 1);
   }
+  console.log(needs);
   const needsLen = Object.keys(needs).length;
-  while (right < s.length) {
-    const c1 = s[right];
-    if (needs[c1]) {
-      windows[c1] ? windows[c1]++ : (windows[c1] = 1);
-      if (windows[c1] === needs[c1]) {
+  let start = 0;
+  while (r < s.length) {
+    const char = s[r];
+    if (needs[char]) {
+      window[char] ? window[char]++ : (window[char] = 1);
+      // needs 只会递增
+      if (window[char] === needs[char]) {
         match++;
       }
     }
-    right++;
-    while (match == needsLen) {
-      if (right - left < minLen) {
-        start = left;
-        minLen = right - left;
+    r++;
+    while (match === needsLen) {
+      if (r - l < minLen) {
+        minLen = r - l;
+        start = l;
       }
-      const c2 = s[left];
-      if (needs[c2]) {
-        windows[c2]--;
-        if (windows[c2] < needs[c2]) {
+      const c = s[l];
+      if (needs[c]) {
+        window[c]--;
+        if (window[c] < needs[c]) {
           match--;
         }
       }
-      left++;
+      l++;
     }
   }
+
   return minLen === Number.MAX_SAFE_INTEGER ? '' : s.substr(start, minLen);
 };
 
