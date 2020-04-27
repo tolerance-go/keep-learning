@@ -1,3 +1,9 @@
+/**
+ * fileName = 水平居中.origin
+ * baseFileName = 水平居中.origin.md
+ * mainFileName = 水平居中
+ */
+
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
@@ -17,7 +23,9 @@ const paths = {
   treePathAsset: path.join(cwd, 'assets/treePath.json'),
 };
 
-const tree = {};
+const tree = {
+  [folderFlag]: true,
+};
 
 const sumOfPath = {};
 
@@ -40,12 +48,26 @@ const addOfPaths = (pathArr) => {
   });
 };
 
+// const findNode = (node, search) => {
+//   if (!node[folderFlag]) return;
+//   for (const key in node) {
+//     if (key === folderFlag) continue;
+//     const child = node[key];
+//     if (key === search) {
+//       return child;
+//     }
+//     findNode(child, search);
+//   }
+// };
+
 const fileNameIsMain = (fileName) => {
   return !(
     fileName === 'index' ||
     fileName.endsWith('visual') ||
     fileName.endsWith('service') ||
-    fileName.endsWith('test')
+    fileName.endsWith('test') ||
+    fileName.endsWith('origin') ||
+    fileName.endsWith('code')
   );
 };
 
@@ -68,7 +90,10 @@ const readSrc = (folder = paths.src, node = tree, pathArr = ['root']) => {
       return;
     }
 
-    node[name] = meta;
+    node[name] = {
+      ...meta,
+      mainName: meta.name.split('.')[0],
+    };
 
     if (fileNameIsMain(meta.name)) {
       addOfPaths(pathArr);
@@ -78,7 +103,139 @@ const readSrc = (folder = paths.src, node = tree, pathArr = ['root']) => {
   return node;
 };
 
-const writeReadme = () => {
+const getVisualLink = (mainFileName) => {
+  return `[🌈](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
+    mainFileName,
+  )})`;
+};
+
+const getServiceLink = (mainFileName) => {
+  return `[🍕](http://47.92.70.143:3000/${encodeURIComponent(mainFileName)})`;
+};
+
+const getTestLink = (parentsPath, mainFileName, parentNode) => {
+  return `[⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+    encodeURIComponent(parentsPath),
+    encodeURIComponent(parentNode[mainFileName + '.test'].base),
+  )})`;
+};
+
+const getCodeLink = (parentsPath, mainFileName, parentNode) => {
+  return `[💻](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+    encodeURIComponent(parentsPath),
+    encodeURIComponent(parentNode[mainFileName + '.code'].base),
+  )})`;
+};
+
+const getGithubSourceLink = (parentsPath, title, baseFileName) => {
+  return `[${title}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+    encodeURIComponent(parentsPath),
+    encodeURIComponent(baseFileName),
+  )})`;
+};
+
+const getFileType = (node, mainFileName) => {
+  const hasVisual = !!node[mainFileName + '.visual'];
+  const hasService = !!node[mainFileName + '.service'];
+  const hasTest = !!node[mainFileName + '.test'];
+  const hasCode = !!node[mainFileName + '.code'];
+  return {
+    hasVisual,
+    hasService,
+    hasTest,
+    hasCode,
+  };
+};
+
+const writeSrcReadme = () => {
+  const dfs = (node, res = []) => {
+    if (node && !node.folder) {
+      if (node.ext === '.md' && node.name.endsWith('origin')) {
+        res.push(node);
+      }
+      return;
+    }
+
+    for (const key in node) {
+      dfs(node[key], res);
+    }
+
+    return res;
+  };
+
+  const originFileList = dfs(tree);
+
+  const eachTree = (node, pathStr = 'root', parentsPath = '', level = 0) => {
+    for (let fileName in node) {
+      const fileMeta = node[fileName];
+
+      if (typeof fileMeta === 'object' && fileMeta[folderFlag]) {
+        const nextPathStr = pathStr + '-' + fileName;
+
+        eachTree(
+          fileMeta,
+          nextPathStr,
+          path.join(parentsPath, fileName),
+          level + 1,
+        );
+        continue;
+      }
+
+      if (fileMeta.ext === '.md' && fileMeta.name.endsWith('origin')) {
+        const mainFileName = fileMeta.name.split('.')[0];
+
+        const { hasVisual, hasService, hasTest, hasCode } = getFileType(
+          node,
+          mainFileName,
+        );
+
+        const headline = `# ${mainFileName}${
+          hasCode ? ` ${getCodeLink(parentsPath, mainFileName, node)}` : ''
+        }${hasVisual ? ` ${getVisualLink(mainFileName)}` : ''}${
+          hasService ? ` ${getServiceLink(mainFileName)}` : ''
+        }${hasTest ? ` ${getTestLink(parentsPath, mainFileName, node)}` : ''}`;
+
+        const index = originFileList.findIndex(
+          (item) => item.name === fileMeta.name,
+        );
+        const pre = originFileList[index - 1];
+        const next = originFileList[index + 1];
+
+        const footer = `${
+          pre
+            ? `上一题：${getGithubSourceLink(
+                parentsPath,
+                pre.mainName,
+                pre.mainName + '.md',
+              )}`
+            : ''
+        }${
+          next
+            ? `${pre ? ' ' : ''}下一题：${getGithubSourceLink(
+                parentsPath,
+                next.mainName,
+                next.mainName + '.md',
+              )}`
+            : ''
+        }`;
+
+        fs.writeFileSync(
+          path.join(fileMeta.dir, mainFileName + '.md'),
+          `${headline}\n\n${fs.readFileSync(
+            path.join(fileMeta.dir, fileMeta.base),
+          )}\n\n${footer}`,
+          {
+            flag: 'w',
+          },
+        );
+      }
+    }
+  };
+
+  eachTree(tree);
+};
+
+const writeRootReadme = () => {
   fs.writeFileSync(paths.readme, fs.readFileSync(paths.readmeHead) + '\n', {
     flag: 'w',
   });
@@ -87,26 +244,30 @@ const writeReadme = () => {
     flag: 'a',
   });
 
-  const eachTree = (node, pathStr = 'root', parents = '', level = 0) => {
+  const eachTree = (node, keyPath = 'root', parentsPath = '', level = 0) => {
     for (let fileName in node) {
       if (fileName === folderFlag) continue;
-      if (!fileNameIsMain(fileName)) {
-        continue;
-      }
+      if (!fileNameIsMain(fileName)) continue;
 
-      if (typeof node[fileName] === 'object' && node[fileName][folderFlag]) {
-        const nextPathStr = pathStr + '-' + fileName;
+      const mainFileName = fileName;
+      const mainFileMeta = node[mainFileName];
+
+      if (
+        typeof mainFileMeta === 'object' &&
+        mainFileMeta[folderFlag]
+      ) {
+        const nextPathStr = keyPath + '-' + mainFileName;
 
         // 如果目录下存在 index，则设置链接
-        if ('index' in node[fileName]) {
+        if ('index' in mainFileMeta) {
           fs.writeFileSync(
             paths.readme,
             `${'  '.repeat(
               level,
-            )}- [${fileName}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-              encodeURIComponent(parents),
-              encodeURIComponent(fileName),
-              encodeURIComponent(node[fileName].index.base),
+            )}- [${mainFileName}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+              encodeURIComponent(parentsPath),
+              encodeURIComponent(mainFileName),
+              encodeURIComponent(mainFileMeta.index.base),
             )})${
               sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
             }\n`,
@@ -117,7 +278,7 @@ const writeReadme = () => {
         } else {
           fs.writeFileSync(
             paths.readme,
-            `${'  '.repeat(level)}- ${fileName}${
+            `${'  '.repeat(level)}- ${mainFileName}${
               sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
             }\n`,
             {
@@ -127,42 +288,29 @@ const writeReadme = () => {
         }
 
         eachTree(
-          node[fileName],
+          mainFileMeta,
           nextPathStr,
-          path.join(parents, fileName),
+          path.join(parentsPath, mainFileName),
           level + 1,
         );
         continue;
       }
 
-      const hasVisual = !!node[fileName + '.visual'];
-      const hasService = !!node[fileName + '.service'];
-      const hasTest = !!node[fileName + '.test'];
+      const { hasVisual, hasService, hasTest, hasCode } = getFileType(
+        node,
+        mainFileName,
+      );
 
       fs.writeFileSync(
         paths.readme,
-        `${'  '.repeat(
-          level,
-        )}- [${fileName}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-          encodeURIComponent(parents),
-          encodeURIComponent(node[fileName].base),
-        )})${
-          hasVisual
-            ? ` [🌈](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
-                fileName,
-              )})`
-            : ''
-        }${
-          hasService
-            ? ` [🍕](http://47.92.70.143:3000/${encodeURIComponent(fileName)})`
-            : ''
-        }${
-          hasTest
-            ? ` [⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-                encodeURIComponent(parents),
-                encodeURIComponent(node[fileName + '.test'].base),
-              )})`
-            : ''
+        `${'  '.repeat(level)}- ${getGithubSourceLink(
+          parentsPath,
+          mainFileName,
+          mainFileMeta.base,
+        )}${hasCode ? ` ${getCodeLink(parentsPath, mainFileName, node)}` : ''}${
+          hasVisual ? ` ${getVisualLink(mainFileName)}` : ''
+        }${hasService ? ` ${getServiceLink(mainFileName)}` : ''}${
+          hasTest ? ` ${getTestLink(parentsPath, mainFileName, node)}` : ''
         }\n`,
         {
           flag: 'a',
@@ -180,5 +328,6 @@ const exportTree = () => {
 };
 
 readSrc();
+writeSrcReadme();
+writeRootReadme();
 exportTree();
-writeReadme();
