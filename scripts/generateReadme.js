@@ -211,7 +211,7 @@ const writeSrcReadme = () => {
             : ''
         }${
           next
-            ? `${pre ? ' &nbsp;&nbsp;&nbsp;&nbsp; ' : ''}下一题：${getGithubSourceLink(
+            ? `${pre ? '\n\n' : ''}下一题：${getGithubSourceLink(
                 next.dir.replace(path.join(process.cwd(), 'src/') , ''),
                 next.mainName,
                 next.mainName + '.md',
