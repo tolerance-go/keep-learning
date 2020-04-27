@@ -113,23 +113,23 @@ const getServiceLink = (mainFileName) => {
   return `[🍕](http://47.92.70.143:3000/${encodeURIComponent(mainFileName)})`;
 };
 
-const getTestLink = (parentsPath, mainFileName, parentNode) => {
+const getTestLink = (parentsPathRelativeSrc, mainFileName, parentNode) => {
   return `[⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-    encodeURIComponent(parentsPath),
+    encodeURIComponent(parentsPathRelativeSrc),
     encodeURIComponent(parentNode[mainFileName + '.test'].base),
   )})`;
 };
 
-const getCodeLink = (parentsPath, mainFileName, parentNode) => {
+const getCodeLink = (parentsPathRelativeSrc, mainFileName, parentNode) => {
   return `[💻](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-    encodeURIComponent(parentsPath),
+    encodeURIComponent(parentsPathRelativeSrc),
     encodeURIComponent(parentNode[mainFileName + '.code'].base),
   )})`;
 };
 
-const getGithubSourceLink = (parentsPath, title, baseFileName) => {
+const getGithubSourceLink = (parentsPathRelativeSrc, title, baseFileName) => {
   return `[${title}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-    encodeURIComponent(parentsPath),
+    encodeURIComponent(parentsPathRelativeSrc),
     encodeURIComponent(baseFileName),
   )})`;
 };
@@ -204,7 +204,7 @@ const writeSrcReadme = () => {
         const footer = `---\n\n${
           pre
             ? `上一题：${getGithubSourceLink(
-                parentsPath,
+                pre.dir.replace(path.join(process.cwd(), 'src/') , ''),
                 pre.mainName,
                 pre.mainName + '.md',
               )}`
@@ -212,7 +212,7 @@ const writeSrcReadme = () => {
         }${
           next
             ? `${pre ? ' ' : ''}下一题：${getGithubSourceLink(
-                parentsPath,
+                next.dir.replace(path.join(process.cwd(), 'src/') , ''),
                 next.mainName,
                 next.mainName + '.md',
               )}`
@@ -252,10 +252,7 @@ const writeRootReadme = () => {
       const mainFileName = fileName;
       const mainFileMeta = node[mainFileName];
 
-      if (
-        typeof mainFileMeta === 'object' &&
-        mainFileMeta[folderFlag]
-      ) {
+      if (typeof mainFileMeta === 'object' && mainFileMeta[folderFlag]) {
         const nextPathStr = keyPath + '-' + mainFileName;
 
         // 如果目录下存在 index，则设置链接
