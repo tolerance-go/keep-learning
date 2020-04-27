@@ -1,4 +1,4 @@
-import insert from '../../src/算法/插入区间';
+import insert from './插入区间.code';
 
 test(`insert(
   [

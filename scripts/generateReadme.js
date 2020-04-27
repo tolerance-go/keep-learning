@@ -3,7 +3,6 @@
  * baseFileName = 水平居中.origin.md
  * mainFileName = 水平居中
  */
-
 const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
@@ -23,8 +22,14 @@ const paths = {
   treePathAsset: path.join(cwd, 'assets/treePath.json'),
 };
 
+const names = {
+  output: 'output',
+  root: 'root',
+  src: 'src',
+};
+
 const tree = {
-  [folderFlag]: true,
+  [folderFlag]: path.parse(paths.src),
 };
 
 const sumOfPath = {};
@@ -60,18 +65,16 @@ const addOfPaths = (pathArr) => {
 //   }
 // };
 
-const fileNameIsMain = (fileName) => {
-  return !(
-    fileName === 'index' ||
-    fileName.endsWith('visual') ||
-    fileName.endsWith('service') ||
-    fileName.endsWith('test') ||
-    fileName.endsWith('origin') ||
-    fileName.endsWith('code')
-  );
+const fileIsOrigin = (node) => {
+  const info = node[folderFlag] || node;
+  return info.ext === '.origin' || info.name.endsWith('origin');
 };
 
-const readSrc = (folder = paths.src, node = tree, pathArr = ['root']) => {
+const fileIsFolder = (fileMeta) => {
+  return fileMeta[folderFlag];
+};
+
+const readTree = (folder = paths.src, node = tree, pathArr = [names.root]) => {
   const files = fs.readdirSync(folder);
   files.forEach((file) => {
     const p = path.join(folder, file);
@@ -79,25 +82,28 @@ const readSrc = (folder = paths.src, node = tree, pathArr = ['root']) => {
     if (p === paths.utils) return;
 
     const s = fs.statSync(p);
-    const meta = path.parse(p);
-    const { name } = meta;
+    const info = path.parse(p);
+    const { name } = info;
+
+    if (fileIsOrigin(info)) {
+      addOfPaths(pathArr);
+    }
 
     if (s.isDirectory()) {
       node[name] = {
-        [folderFlag]: true,
+        [folderFlag]: {
+          ...info,
+          mainName: info.name.split('.')[0],
+        },
       };
-      readSrc(p, node[name], [...pathArr, name]);
+      readTree(p, node[name], [...pathArr, name]);
       return;
     }
 
     node[name] = {
-      ...meta,
-      mainName: meta.name.split('.')[0],
+      ...info,
+      mainName: info.name.split('.')[0],
     };
-
-    if (fileNameIsMain(meta.name)) {
-      addOfPaths(pathArr);
-    }
   });
 
   return node;
@@ -113,24 +119,26 @@ const getServiceLink = (mainFileName) => {
   return `[🍕](http://47.92.70.143:3000/${encodeURIComponent(mainFileName)})`;
 };
 
-const getTestLink = (parentsPathRelativeSrc, mainFileName, parentNode) => {
-  return `[⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-    encodeURIComponent(parentsPathRelativeSrc),
-    encodeURIComponent(parentNode[mainFileName + '.test'].base),
+const getTestLink = (parentsPathRelativeRoot, mainFileName, parentNode) => {
+  return `[⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${encodeURIComponent(
+    path.join(parentsPathRelativeRoot, parentNode[mainFileName + '.test'].base),
   )})`;
 };
 
-const getCodeLink = (parentsPathRelativeSrc, mainFileName, parentNode) => {
-  return `[💻](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-    encodeURIComponent(parentsPathRelativeSrc),
-    encodeURIComponent(parentNode[mainFileName + '.code'].base),
+const getCodeLink = (parentsPathRelativeRoot, mainFileName, parentNode) => {
+  return `[💻](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${encodeURIComponent(
+    path.join(parentsPathRelativeRoot, parentNode[mainFileName + '.code'].base),
   )})`;
 };
 
-const getGithubSourceLink = (parentsPathRelativeSrc, title, baseFileName) => {
-  return `[${title}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-    encodeURIComponent(parentsPathRelativeSrc),
-    encodeURIComponent(baseFileName),
+const getGithubSourceLink = (
+  title,
+  parentsPathRelativeRoot,
+  baseFileName,
+  root = 'output',
+) => {
+  return `[${title}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/${root}/${encodeURIComponent(
+    path.join(parentsPathRelativeRoot, baseFileName),
   )})`;
 };
 
@@ -147,10 +155,10 @@ const getFileType = (node, mainFileName) => {
   };
 };
 
-const writeSrcReadme = () => {
+const writeOriginReadme = () => {
   const dfs = (node, res = []) => {
-    if (node && !node.folder) {
-      if (node.ext === '.md' && node.name.endsWith('origin')) {
+    if (node && !node[folderFlag]) {
+      if (fileIsOrigin(node)) {
         res.push(node);
       }
       return;
@@ -165,15 +173,102 @@ const writeSrcReadme = () => {
 
   const originFileList = dfs(tree);
 
-  const eachTree = (node, pathStr = 'root', parentsPath = '', level = 0) => {
-    for (let fileName in node) {
-      const fileMeta = node[fileName];
+  const writeOriginToOutput = (
+    fileInfo,
+    parentsPath,
+    node,
+    mainFileName = fileInfo.mainName,
+  ) => {
+    const { hasVisual, hasService, hasTest, hasCode } = getFileType(
+      node,
+      mainFileName,
+    );
 
-      if (typeof fileMeta === 'object' && fileMeta[folderFlag]) {
+    const headline = `# ${fileInfo.mainName}${
+      hasCode ? ` ${getCodeLink(parentsPath, mainFileName, node)}` : ''
+    }${hasVisual ? ` ${getVisualLink(fileInfo.mainName)}` : ''}${
+      hasService ? ` ${getServiceLink(fileInfo.mainName)}` : ''
+    }${hasTest ? ` ${getTestLink(parentsPath, mainFileName, node)}` : ''}`;
+
+    const index = originFileList.findIndex(
+      (item) => item.name === fileInfo.name,
+    );
+    const pre = originFileList[index - 1];
+    const next = originFileList[index + 1];
+
+    const footer = `---\n\n${
+      pre
+        ? `上一题：${getGithubSourceLink(
+            pre.mainName,
+            pre.dir.replace(path.join(process.cwd(), names.src, '/'), ''),
+            pre.mainName + '.md',
+          )}`
+        : ''
+    }${
+      next
+        ? `${pre ? '\n\n' : ''}下一题：${getGithubSourceLink(
+            next.mainName,
+            next.dir.replace(path.join(process.cwd(), names.src, '/'), ''),
+            next.mainName + '.md',
+          )}`
+        : ''
+    }`;
+
+    return {
+      headline,
+      footer,
+    };
+  };
+
+  const eachTree = (
+    node,
+    pathStr = names.root,
+    parentsPath = '',
+    level = 0,
+  ) => {
+    for (let fileName in node) {
+      if (fileName === folderFlag) continue;
+      const childNode = node[fileName];
+
+      if (childNode[folderFlag]) {
+        const folderInfo = childNode[folderFlag];
+        const folderOriginType = folderInfo.ext === '.origin';
+
+        if (folderOriginType) {
+          const folderInfo = childNode[folderFlag];
+
+          const { headline, footer } = writeOriginToOutput(
+            folderInfo,
+            parentsPath,
+            node[folderInfo.name],
+            node[folderInfo.name].index.name,
+          );
+
+          const outPath = path.join(
+            folderInfo.dir.replace(names.src, names.output),
+          );
+
+          try {
+            fs.statSync(outPath).isDirectory();
+          } catch {
+            fs.mkdirSync(outPath, { recursive: true });
+          }
+
+          fs.writeFileSync(
+            path.join(outPath, folderInfo.name + '.md'),
+            `${headline}\n\n${fs.readFileSync(
+              path.join(folderInfo.dir, folderInfo.base, childNode.index.base),
+            )}\n\n${footer}`,
+            {
+              flag: 'w',
+            },
+          );
+        }
+
         const nextPathStr = pathStr + '-' + fileName;
 
         eachTree(
-          fileMeta,
+          childNode,
           nextPathStr,
           path.join(parentsPath, fileName),
           level + 1,
@@ -181,48 +276,26 @@ const writeSrcReadme = () => {
         continue;
       }
 
-      if (fileMeta.ext === '.md' && fileMeta.name.endsWith('origin')) {
-        const mainFileName = fileMeta.name.split('.')[0];
-
-        const { hasVisual, hasService, hasTest, hasCode } = getFileType(
+      const fileInfo = childNode;
+      if (fileIsOrigin(fileInfo)) {
+        const { headline, footer } = writeOriginToOutput(
+          fileInfo,
+          parentsPath,
           node,
-          mainFileName,
         );
 
-        const headline = `# ${mainFileName}${
-          hasCode ? ` ${getCodeLink(parentsPath, mainFileName, node)}` : ''
-        }${hasVisual ? ` ${getVisualLink(mainFileName)}` : ''}${
-          hasService ? ` ${getServiceLink(mainFileName)}` : ''
-        }${hasTest ? ` ${getTestLink(parentsPath, mainFileName, node)}` : ''}`;
+        const outPath = fileInfo.dir.replace(names.src, names.output);
 
-        const index = originFileList.findIndex(
-          (item) => item.name === fileMeta.name,
-        );
-        const pre = originFileList[index - 1];
-        const next = originFileList[index + 1];
-
-        const footer = `---\n\n${
-          pre
-            ? `上一题：${getGithubSourceLink(
-                pre.dir.replace(path.join(process.cwd(), 'src/') , ''),
-                pre.mainName,
-                pre.mainName + '.md',
-              )}`
-            : ''
-        }${
-          next
-            ? `${pre ? '\n\n' : ''}下一题：${getGithubSourceLink(
-                next.dir.replace(path.join(process.cwd(), 'src/') , ''),
-                next.mainName,
-                next.mainName + '.md',
-              )}`
-            : ''
-        }`;
+        try {
+          fs.statSync(outPath).isDirectory();
+        } catch {
+          fs.mkdirSync(outPath, { recursive: true });
+        }
 
         fs.writeFileSync(
-          path.join(fileMeta.dir, mainFileName + '.md'),
+          path.join(outPath, fileInfo.mainName + '.md'),
           `${headline}\n\n${fs.readFileSync(
-            path.join(fileMeta.dir, fileMeta.base),
+            path.join(fileInfo.dir, fileInfo.base),
           )}\n\n${footer}`,
           {
             flag: 'w',
@@ -244,34 +317,83 @@ const writeRootReadme = () => {
     flag: 'a',
   });
 
-  const eachTree = (node, keyPath = 'root', parentsPath = '', level = 0) => {
+  const eachTree = (
+    node,
+    keyPath = names.root,
+    parentsPath = '',
+    level = 0,
+  ) => {
     for (let fileName in node) {
       if (fileName === folderFlag) continue;
-      if (!fileNameIsMain(fileName)) continue;
 
-      const mainFileName = fileName;
-      const mainFileMeta = node[mainFileName];
+      const childNode = node[fileName];
 
-      if (typeof mainFileMeta === 'object' && mainFileMeta[folderFlag]) {
+      if (!fileIsFolder(childNode) && !fileIsOrigin(childNode)) continue;
+
+      const originFileName = fileName;
+      const mainFileName = originFileName.split('.')[0];
+
+      const folderInfo = childNode[folderFlag];
+
+      if (folderInfo) {
+        const folderOriginType = folderInfo.ext === '.origin';
         const nextPathStr = keyPath + '-' + mainFileName;
 
         // 如果目录下存在 index，则设置链接
-        if ('index' in mainFileMeta) {
-          fs.writeFileSync(
-            paths.readme,
-            `${'  '.repeat(
-              level,
-            )}- [${mainFileName}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
-              encodeURIComponent(parentsPath),
-              encodeURIComponent(mainFileName),
-              encodeURIComponent(mainFileMeta.index.base),
-            )})${
-              sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
-            }\n`,
-            {
-              flag: 'a',
-            },
-          );
+        if ('index' in childNode) {
+          // 文件夹形式存在的 .origin
+          if (folderOriginType) {
+            const { hasVisual, hasService, hasTest, hasCode } = getFileType(
+              node[folderInfo.name],
+              node[folderInfo.name].index.name,
+            );
+
+            fs.writeFileSync(
+              paths.readme,
+              `${'  '.repeat(level)}- ${getGithubSourceLink(
+                mainFileName,
+                parentsPath,
+                path.join(folderInfo.base, childNode.index.base),
+                names.output,
+              )}${
+                hasCode
+                  ? ` ${getCodeLink(
+                      path.join(parentsPath, folderInfo.name),
+                      node[folderInfo.name].index.name,
+                      node[folderInfo.name],
+                    )}`
+                  : ''
+              }${hasVisual ? ` ${getVisualLink(mainFileName)}` : ''}${
+                hasService ? ` ${getServiceLink(mainFileName)}` : ''
+              }${
+                hasTest
+                  ? ` ${getTestLink(
+                      path.join(folderInfo.base, folderInfo.name),
+                      node[folderInfo.name].index.name,
+                      node[folderInfo.name],
+                    )}`
+                  : ''
+              }\n`,
+              {
+                flag: 'a',
+              },
+            );
+          } else {
+            fs.writeFileSync(
+              paths.readme,
+              `${'  '.repeat(level)}- ${getGithubSourceLink(
+                mainFileName,
+                parentsPath,
+                path.join(mainFileName, childNode.index.base),
+                names.output,
+              )}${
+                sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
+              }\n`,
+              {
+                flag: 'a',
+              },
+            );
+          }
         } else {
           fs.writeFileSync(
             paths.readme,
@@ -285,7 +407,7 @@ const writeRootReadme = () => {
         }
 
         eachTree(
-          mainFileMeta,
+          childNode,
           nextPathStr,
           path.join(parentsPath, mainFileName),
           level + 1,
@@ -293,6 +415,8 @@ const writeRootReadme = () => {
         continue;
       }
 
+      //// 一般 origin 文件处理
+      const fileInfo = childNode;
       const { hasVisual, hasService, hasTest, hasCode } = getFileType(
         node,
         mainFileName,
@@ -301,9 +425,9 @@ const writeRootReadme = () => {
       fs.writeFileSync(
         paths.readme,
         `${'  '.repeat(level)}- ${getGithubSourceLink(
-          parentsPath,
           mainFileName,
-          mainFileMeta.base,
+          parentsPath,
+          mainFileName + '.md',
         )}${hasCode ? ` ${getCodeLink(parentsPath, mainFileName, node)}` : ''}${
           hasVisual ? ` ${getVisualLink(mainFileName)}` : ''
         }${hasService ? ` ${getServiceLink(mainFileName)}` : ''}${
@@ -324,7 +448,7 @@ const exportTree = () => {
   fs.writeFileSync(paths.treePathAsset, JSON.stringify(sumOfPath));
 };
 
-readSrc();
-writeSrcReadme();
-writeRootReadme();
+readTree();
 exportTree();
+writeOriginReadme();
+writeRootReadme();
