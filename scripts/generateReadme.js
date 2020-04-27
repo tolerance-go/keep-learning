@@ -40,6 +40,15 @@ const addOfPaths = (pathArr) => {
   });
 };
 
+const fileNameIsMain = (fileName) => {
+  return !(
+    fileName === 'index' ||
+    fileName.endsWith('visual') ||
+    fileName.endsWith('service') ||
+    fileName.endsWith('test')
+  );
+};
+
 const readSrc = (folder = paths.src, node = tree, pathArr = ['root']) => {
   const files = fs.readdirSync(folder);
   files.forEach((file) => {
@@ -60,7 +69,10 @@ const readSrc = (folder = paths.src, node = tree, pathArr = ['root']) => {
     }
 
     node[name] = meta;
-    addOfPaths(pathArr);
+
+    if (fileNameIsMain(meta.name)) {
+      addOfPaths(pathArr);
+    }
   });
 
   return node;
@@ -76,29 +88,25 @@ const writeReadme = () => {
   });
 
   const eachTree = (node, pathStr = 'root', parents = '', level = 0) => {
-    for (let file in node) {
-      if (file === folderFlag) continue;
-      if (file === 'index') continue;
-      if (
-        file.endsWith('visual') ||
-        file.endsWith('service') ||
-        file.endsWith('test')
-      )
+    for (let fileName in node) {
+      if (fileName === folderFlag) continue;
+      if (!fileNameIsMain(fileName)) {
         continue;
+      }
 
-      if (typeof node[file] === 'object' && node[file][folderFlag]) {
-        const nextPathStr = pathStr + '-' + file;
+      if (typeof node[fileName] === 'object' && node[fileName][folderFlag]) {
+        const nextPathStr = pathStr + '-' + fileName;
 
         // 如果目录下存在 index，则设置链接
-        if ('index' in node[file]) {
+        if ('index' in node[fileName]) {
           fs.writeFileSync(
             paths.readme,
             `${'  '.repeat(
               level,
-            )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+            )}- [${fileName}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
               encodeURIComponent(parents),
-              encodeURIComponent(file),
-              encodeURIComponent(node[file].index.base),
+              encodeURIComponent(fileName),
+              encodeURIComponent(node[fileName].index.base),
             )})${
               sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
             }\n`,
@@ -109,7 +117,7 @@ const writeReadme = () => {
         } else {
           fs.writeFileSync(
             paths.readme,
-            `${'  '.repeat(level)}- ${file}${
+            `${'  '.repeat(level)}- ${fileName}${
               sumOfPath[nextPathStr] ? `(${sumOfPath[nextPathStr]})` : ''
             }\n`,
             {
@@ -118,36 +126,41 @@ const writeReadme = () => {
           );
         }
 
-        eachTree(node[file], nextPathStr, path.join(parents, file), level + 1);
+        eachTree(
+          node[fileName],
+          nextPathStr,
+          path.join(parents, fileName),
+          level + 1,
+        );
         continue;
       }
 
-      const hasVisual = !!node[file + '.visual'];
-      const hasService = !!node[file + '.service'];
-      const hasTest = !!node[file + '.test'];
+      const hasVisual = !!node[fileName + '.visual'];
+      const hasService = !!node[fileName + '.service'];
+      const hasTest = !!node[fileName + '.test'];
 
       fs.writeFileSync(
         paths.readme,
         `${'  '.repeat(
           level,
-        )}- [${file}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
+        )}- [${fileName}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
           encodeURIComponent(parents),
-          encodeURIComponent(node[file].base),
+          encodeURIComponent(node[fileName].base),
         )})${
           hasVisual
             ? ` [🌈](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
-                file,
+                fileName,
               )})`
             : ''
         }${
           hasService
-            ? ` [🍕](http://47.92.70.143:3000/${encodeURIComponent(file)})`
+            ? ` [🍕](http://47.92.70.143:3000/${encodeURIComponent(fileName)})`
             : ''
         }${
           hasTest
             ? ` [⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${path.join(
                 encodeURIComponent(parents),
-                encodeURIComponent(node[file + '.test'].base),
+                encodeURIComponent(node[fileName + '.test'].base),
               )})`
             : ''
         }\n`,
