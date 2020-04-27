@@ -203,19 +203,19 @@ const writeSrcReadme = () => {
 
         const footer = `---\n\n${
           pre
-            ? `上一题：${getGithubSourceLink(
+            ? `<span style="float:left;">上一题：${getGithubSourceLink(
                 pre.dir.replace(path.join(process.cwd(), 'src/') , ''),
                 pre.mainName,
                 pre.mainName + '.md',
-              )}`
+              )}</span>`
             : ''
         }${
           next
-            ? `${pre ? ' ' : ''}下一题：${getGithubSourceLink(
+            ? `<span style="float:right;">下一题：${getGithubSourceLink(
                 next.dir.replace(path.join(process.cwd(), 'src/') , ''),
                 next.mainName,
                 next.mainName + '.md',
-              )}`
+              )}</span>`
             : ''
         }`;
 
