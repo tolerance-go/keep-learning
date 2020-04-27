@@ -201,7 +201,7 @@ const writeSrcReadme = () => {
         const pre = originFileList[index - 1];
         const next = originFileList[index + 1];
 
-        const footer = `${
+        const footer = `---\n\n${
           pre
             ? `上一题：${getGithubSourceLink(
                 parentsPath,
