@@ -1,5 +1,5 @@
 const mergeKLists = require('../../src/算法/分治/合并K个排序链表');
-const { getNodeList } = require('../../utils/utils');
+const { getListNums: getNodeList } = require('../../utils/utils');
 
 test(`mergeKLists([1, 2, 4], [1, 3, 4])`, () => {
   expect(

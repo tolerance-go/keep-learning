@@ -6,7 +6,7 @@
 
 ---
 
-总数(17)
+总数(22)
 
 - git
 - 前端(14)
@@ -35,18 +35,24 @@
       - [跨域受限制的场景有哪些](https://github.com/tolerance-go/keep-learning/blob/master/output/%E5%89%8D%E7%AB%AF%2F%E4%BB%A3%E7%90%86%2F%E8%B7%A8%E5%9F%9F%2F%E8%B7%A8%E5%9F%9F%E5%8F%97%E9%99%90%E5%88%B6%E7%9A%84%E5%9C%BA%E6%99%AF%E6%9C%89%E5%93%AA%E4%BA%9B.md)
   - 最佳实践(1)
     - [如何实现无限滚动](https://github.com/tolerance-go/keep-learning/blob/master/output/%E5%89%8D%E7%AB%AF%2F%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%2F%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%97%A0%E9%99%90%E6%BB%9A%E5%8A%A8.md)
-- 算法(3)
+- 算法(8)
   - 二分查找
-  - 分治
-  - 动态规划(2)
+  - 分治(1)
+    - [不同的二叉搜索树2](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E5%88%86%E6%B2%BB%2F%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%912.origin%2Findex.md) [💻](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%88%86%E6%B2%BB%2F%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%912%2Findex.code.ts) [⛱️](https://github.com/tolerance-go/keep-learning/blob/master/src/%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%912.origin%2F%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%912%2Findex.test.ts)
+  - 动态规划(3)
     - [不同路径](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%2F%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84.origin%2Findex.md) [💻](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%2F%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84%2Findex.code.ts) [⛱️](https://github.com/tolerance-go/keep-learning/blob/master/src/%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84.origin%2F%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84%2Findex.test.ts)
     - [编辑距离](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%2F%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB.md) [💻](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%2F%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB.code.ts) [⛱️](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%2F%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB.test.ts)
+    - [解码方法](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%2F%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95.origin%2Findex.md) [💻](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%2F%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95%2Findex.code.ts) [⛱️](https://github.com/tolerance-go/keep-learning/blob/master/src/%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95.origin%2F%E8%A7%A3%E7%A0%81%E6%96%B9%E6%B3%95%2Findex.test.ts)
   - 双指针
-  - 回溯
+  - 回溯(1)
+    - [复原IP地址](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E5%9B%9E%E6%BA%AF%2F%E5%A4%8D%E5%8E%9FIP%E5%9C%B0%E5%9D%80.origin%2Findex.md) [💻](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E5%9B%9E%E6%BA%AF%2F%E5%A4%8D%E5%8E%9FIP%E5%9C%B0%E5%9D%80%2Findex.code.ts) [⛱️](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%A4%8D%E5%8E%9FIP%E5%9C%B0%E5%9D%80.origin%2F%E5%A4%8D%E5%8E%9FIP%E5%9C%B0%E5%9D%80%2Findex.test.ts)
   - [插入区间](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4.md) [💻](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4.code.ts) [⛱️](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4.test.ts)
   - 数组
   - 有限状态机
+  - 树(1)
+    - [二叉树的中序遍历](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E6%A0%91%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.origin%2Findex.md) [💻](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E6%A0%91%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%2Findex.code.ts) [⛱️](https://github.com/tolerance-go/keep-learning/blob/master/src/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.origin%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%2Findex.test.ts)
   - [滑动窗口](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%2Findex.md)
   - 规律
   - 递归
-  - 链表
+  - 链表(1)
+    - [反转链表2](https://github.com/tolerance-go/keep-learning/blob/master/output/%E7%AE%97%E6%B3%95%2F%E9%93%BE%E8%A1%A8%2F%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A82.origin%2Findex.md) [💻](https://github.com/tolerance-go/keep-learning/blob/master/src/%E7%AE%97%E6%B3%95%2F%E9%93%BE%E8%A1%A8%2F%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A82%2Findex.code.ts) [⛱️](https://github.com/tolerance-go/keep-learning/blob/master/src/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A82.origin%2F%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A82%2Findex.test.ts)

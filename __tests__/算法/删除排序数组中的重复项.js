@@ -1,5 +1,5 @@
 const removeDuplicates = require('../../src/算法/双指针/删除排序数组中的重复项');
-const { getNodeList } = require('../../utils/utils');
+const { getListNums: getNodeList } = require('../../utils/utils');
 
 test('removeDuplicates([1,1,2])', () => {
   const arr = [1, 1, 2];

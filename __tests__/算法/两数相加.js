@@ -1,5 +1,5 @@
 const addTwoNumbers = require('../../src/算法/两数相加');
-const { getNodeList } = require('../../utils/utils');
+const { getListNums: getNodeList } = require('../../utils/utils');
 
 test('addTwoNumbers', () => {
   expect(
