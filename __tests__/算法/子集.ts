@@ -1,4 +1,4 @@
-import subsets from 'src/算法/回溯/子集';
+import subsets from 'src/数据结构和算法/回溯/子集';
 
 test(`subsets([1, 2, 3])`, () => {
   expect(subsets([1, 2, 3])).toStrictEqual([

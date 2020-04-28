@@ -1,4 +1,4 @@
-const isMatch = require("../../src/算法/动态规划/正则表达式匹配");
+const isMatch = require("../../src/数据结构和算法/动态规划/正则表达式匹配");
 
 test(`isMatch('abc', 'a*c')`, () => {
   expect(isMatch("abc", "a*c")).toStrictEqual(false);

@@ -13,16 +13,19 @@
     "run:as-app:components": "echo 'test:as-app:components'",
     "run:as-server": "nodemon --watch 'AnswerSheet-service/**/*' -e ts --exec 'ts-node' --project tsconfig.as-server.json ./AnswerSheet-service/index.ts",
     "build": "node ./scripts/generateReadme.js",
-    "build:all": "yarn build && yarn build:all-apidoc && yarn build:server && yarn build:visual && yarn build:as-server && yarn build:as-app",
+    "build:pre-commit": "yarn build && yarn build:qa && yarn build:all-apidoc",
+    "build:all": "yarn build && yarn build:qa && yarn build:all-apidoc && yarn build:server && yarn build:visual && yarn build:as-server && yarn build:as-app:no-dep",
     "build:all-apidoc": "yarn build:server:apidoc && yarn build:as-server:apidoc",
+    "build:qa": "ts-node ./scripts/generateQA.js",
     "build:visual": "build-storybook -o dist-visual",
     "build:server": "tsc --build tsconfig.server.json",
     "build:server:apidoc": "swagger-jsdoc src/**/*.service.ts -d swaggerDef.js -o public/swagger.json",
-    "build:as-app": "parcel build -d dist-as-app AnswerSheet/index.html",
+    "build:as-app": "yarn build && yarn build:qa && parcel build -d dist-as-app AnswerSheet/index.html",
+    "build:as-app:no-dep": "parcel build -d dist-as-app AnswerSheet/index.html",
     "build:as-server": "tsc --build tsconfig.as-server.json",
     "build:as-server:apidoc": "swagger-jsdoc AnswerSheet-service/api/**/*.ts -d swaggerDef-as.js -o AnswerSheet-service-public/swagger.json",
     "publish": "yarn test && yarn build && lerna-changelog",
-    "clean": "rimraf dist-visual dist-server dist-as-server dist-as-app"
+    "clean": "rimraf output dist-visual dist-server dist-as-server dist-as-app"
   },
   "lint-staged": {
     "*.{md,json}": [
@@ -37,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn build && yarn build:all-apidoc",
+      "pre-commit": "yarn test && yarn build:pre-commit",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },

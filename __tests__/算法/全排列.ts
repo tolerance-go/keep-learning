@@ -1,4 +1,4 @@
-import permute from 'src/算法/回溯/全排列';
+import permute from 'src/数据结构和算法/回溯/全排列';
 
 test('permute([1, 2, 3])', () => {
   expect(permute([1, 2, 3])).toStrictEqual([

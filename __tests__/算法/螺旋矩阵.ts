@@ -1,4 +1,4 @@
-import spiralOrder from 'src/算法/螺旋矩阵';
+import spiralOrder from 'src/数据结构和算法/螺旋矩阵';
 
 test(`spiralOrder([
     [1, 2, 3],

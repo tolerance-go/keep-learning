@@ -1,4 +1,4 @@
-const solveSudoku = require("../../src/算法/解数独");
+const solveSudoku = require("../../src/数据结构和算法/解数独");
 
 test(`solveSudoku(
   [

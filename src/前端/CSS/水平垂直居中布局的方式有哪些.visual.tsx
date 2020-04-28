@@ -470,4 +470,4 @@ export const AbsoluteTransform = () => {
   );
 };
 
-export default { title: '垂直居中布局的方式' };
+export default { title: '前端/CSS/垂直居中布局的方式' };

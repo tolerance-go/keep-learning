@@ -8,7 +8,7 @@ const paths = {
   src: path.join(__dirname, '../src'),
 };
 
-const load = (folder = paths.src) => {
+const load = (folder = paths.src, pathArr = []) => {
   const files = fs.readdirSync(folder);
   files.forEach((file) => {
     const ps = path.join(folder, file);
@@ -18,7 +18,7 @@ const load = (folder = paths.src) => {
     const { name } = meta;
 
     if (s.isDirectory()) {
-      load(ps);
+      load(ps, [...pathArr, file]);
       return;
     }
 
@@ -26,8 +26,23 @@ const load = (folder = paths.src) => {
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       const { default: apiGenerator } = require(ps);
       // remove .service
-      const [filename] = name.split('.');
-      apiGenerator(router, '/' + encodeURIComponent(filename));
+      const [fileName] = name.split('.');
+
+      let parentArr;
+      let mainFileName;
+
+      if (fileName === 'index') {
+        parentArr = pathArr.slice(0, -1);
+        mainFileName = pathArr[pathArr.length - 1].split('.')[0];
+      } else {
+        parentArr = pathArr;
+        mainFileName = fileName;
+      }
+
+      apiGenerator(
+        router,
+        encodeURI(path.join('/', ...parentArr, mainFileName)),
+      );
     }
   });
 };

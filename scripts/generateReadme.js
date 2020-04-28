@@ -26,6 +26,13 @@ const names = {
   output: 'output',
   root: 'root',
   src: 'src',
+  treePathSeparator: '/',
+};
+
+const descReg = /---\n((.|\n)*)\n---/i;
+const DescTagZhMap = {
+  difficulty: '难度',
+  other: '其他',
 };
 
 const tree = {
@@ -40,7 +47,7 @@ const addOfPaths = (pathArr) => {
     if (res.length === 0) {
       res.push(pathArr[i]);
     } else {
-      res.push(res[res.length - 1] + '-' + pathArr[i]);
+      res.push(path.join(res[res.length - 1], pathArr[i]));
     }
   }
 
@@ -74,7 +81,11 @@ const fileIsFolder = (fileMeta) => {
   return fileMeta[folderFlag];
 };
 
-const readTree = (folder = paths.src, node = tree, pathArr = [names.root]) => {
+const readTree = (
+  folder = paths.src,
+  node = tree,
+  pathArr = [names.root, names.src],
+) => {
   const files = fs.readdirSync(folder);
   files.forEach((file) => {
     const p = path.join(folder, file);
@@ -109,24 +120,34 @@ const readTree = (folder = paths.src, node = tree, pathArr = [names.root]) => {
   return node;
 };
 
-const getVisualLink = (mainFileName) => {
-  return `[🌈](http://47.92.70.143:8000/?path=/story/${encodeURIComponent(
-    mainFileName,
+const raw = (a) => a;
+
+const getVisualLink = (parentsPathRelativeRoot, mainFileName) => {
+  return `[🌈](http://47.92.70.143:8000/?path=/story/${raw(
+    path.join(parentsPathRelativeRoot, mainFileName),
   )})`;
 };
 
-const getServiceLink = (mainFileName) => {
-  return `[🍕](http://47.92.70.143:3000/${encodeURIComponent(mainFileName)})`;
+const getQALink = (parentsPathRelativeRoot, mainFileName, parentNode) => {
+  return `[🔑](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${raw(
+    path.join(parentsPathRelativeRoot, parentNode[mainFileName + '.qa'].base),
+  )})`;
+};
+
+const getServiceLink = (parentsPathRelativeRoot, mainFileName) => {
+  return `[🍕](http://47.92.70.143:3000/${raw(
+    path.join(parentsPathRelativeRoot, mainFileName),
+  )})`;
 };
 
 const getTestLink = (parentsPathRelativeRoot, mainFileName, parentNode) => {
-  return `[⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${encodeURIComponent(
+  return `[⛱️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${raw(
     path.join(parentsPathRelativeRoot, parentNode[mainFileName + '.test'].base),
   )})`;
 };
 
 const getCodeLink = (parentsPathRelativeRoot, mainFileName, parentNode) => {
-  return `[💻](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${encodeURIComponent(
+  return `[⌨️](https://github.com/tolerance-go/keep-learning/blob/${branchName}/src/${raw(
     path.join(parentsPathRelativeRoot, parentNode[mainFileName + '.code'].base),
   )})`;
 };
@@ -137,7 +158,7 @@ const getGithubSourceLink = (
   baseFileName,
   root = 'output',
 ) => {
-  return `[${title}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/${root}/${encodeURIComponent(
+  return `[${title}](https://github.com/tolerance-go/keep-learning/blob/${branchName}/${root}/${raw(
     path.join(parentsPathRelativeRoot, baseFileName),
   )})`;
 };
@@ -147,11 +168,13 @@ const getFileType = (node, mainFileName) => {
   const hasService = !!node[mainFileName + '.service'];
   const hasTest = !!node[mainFileName + '.test'];
   const hasCode = !!node[mainFileName + '.code'];
+  const hasQA = !!node[mainFileName + '.qa'];
   return {
     hasVisual,
     hasService,
     hasTest,
     hasCode,
+    hasQA,
   };
 };
 
@@ -173,22 +196,46 @@ const writeOriginReadme = () => {
 
   const originFileList = dfs(tree);
 
+  const convertOriginMarkdownOnDesc = (source) => {
+    const res = source.match(descReg);
+    if (res != null) {
+      const [match, item] = source.match(descReg);
+
+      const descList = item
+        .split('\n')
+        .map((item) => item.split(':').map((it) => it.trim()));
+      const targetContent = descList
+        .map((item) => {
+          const [name, val] = item;
+          const zhName = DescTagZhMap[name];
+          if (zhName == null) throw new Error('desc key unknow');
+          return '`' + zhName + '：' + val + '`';
+        })
+        .join(' ');
+
+      return source.replace(descReg, targetContent);
+    }
+    return source;
+  };
+
   const writeOriginToOutput = (
     fileInfo,
     parentsPath,
     node,
     mainFileName = fileInfo.mainName,
   ) => {
-    const { hasVisual, hasService, hasTest, hasCode } = getFileType(
+    const { hasVisual, hasService, hasTest, hasCode, hasQA } = getFileType(
       node,
       mainFileName,
     );
 
     const headline = `# ${fileInfo.mainName}${
       hasCode ? ` ${getCodeLink(parentsPath, mainFileName, node)}` : ''
-    }${hasVisual ? ` ${getVisualLink(fileInfo.mainName)}` : ''}${
-      hasService ? ` ${getServiceLink(fileInfo.mainName)}` : ''
-    }${hasTest ? ` ${getTestLink(parentsPath, mainFileName, node)}` : ''}`;
+    }${hasVisual ? ` ${getVisualLink(parentsPath, fileInfo.mainName)}` : ''}${
+      hasService ? ` ${getServiceLink(parentsPath, fileInfo.mainName)}` : ''
+    }${hasTest ? ` ${getTestLink(parentsPath, mainFileName, node)}` : ''}${
+      hasQA ? ` ${getQALink(parentsPath, mainFileName, node)}` : ''
+    }`;
 
     const index = originFileList.findIndex(
       (item) => item.name === fileInfo.name,
@@ -254,11 +301,18 @@ const writeOriginReadme = () => {
             fs.mkdirSync(outPath, { recursive: true });
           }
 
+          let source = fs.readFileSync(
+            path.join(folderInfo.dir, folderInfo.base, childNode.index.base),
+            {
+              encoding: 'utf8',
+            },
+          );
+
+          source = convertOriginMarkdownOnDesc(source);
+
           fs.writeFileSync(
             path.join(outPath, folderInfo.name + '.md'),
-            `${headline}\n\n${fs.readFileSync(
-              path.join(folderInfo.dir, folderInfo.base, childNode.index.base),
-            )}\n\n${footer}`,
+            `${headline}\n\n${source}\n\n${footer}`,
             {
               flag: 'w',
             },
@@ -292,11 +346,15 @@ const writeOriginReadme = () => {
           fs.mkdirSync(outPath, { recursive: true });
         }
 
+        let source = fs.readFileSync(path.join(fileInfo.dir, fileInfo.base), {
+          encoding: 'utf8',
+        });
+
+        source = convertOriginMarkdownOnDesc(source);
+
         fs.writeFileSync(
           path.join(outPath, fileInfo.mainName + '.md'),
-          `${headline}\n\n${fs.readFileSync(
-            path.join(fileInfo.dir, fileInfo.base),
-          )}\n\n${footer}`,
+          `${headline}\n\n${source}\n\n${footer}`,
           {
             flag: 'w',
           },
@@ -319,7 +377,7 @@ const writeRootReadme = () => {
 
   const eachTree = (
     node,
-    keyPath = names.root,
+    keyPath = path.join(names.root, names.src),
     parentsPath = '',
     level = 0,
   ) => {
@@ -337,13 +395,19 @@ const writeRootReadme = () => {
 
       if (folderInfo) {
         const folderOriginType = folderInfo.ext === '.origin';
-        const nextPathStr = keyPath + '-' + mainFileName;
+        const nextPathStr = path.join(keyPath, mainFileName);
 
         // 如果目录下存在 index，则设置链接
         if ('index' in childNode) {
           // 文件夹形式存在的 .origin
           if (folderOriginType) {
-            const { hasVisual, hasService, hasTest, hasCode } = getFileType(
+            const {
+              hasVisual,
+              hasService,
+              hasTest,
+              hasCode,
+              hasQA,
+            } = getFileType(
               node[folderInfo.name],
               node[folderInfo.name].index.name,
             );
@@ -358,17 +422,37 @@ const writeRootReadme = () => {
               )}${
                 hasCode
                   ? ` ${getCodeLink(
-                      path.join(parentsPath, folderInfo.name),
+                      parentsPath,
                       node[folderInfo.name].index.name,
                       node[folderInfo.name],
                     )}`
                   : ''
-              }${hasVisual ? ` ${getVisualLink(mainFileName)}` : ''}${
-                hasService ? ` ${getServiceLink(mainFileName)}` : ''
+              }${
+                hasVisual
+                  ? ` ${getVisualLink(
+                      path.join(parentsPath, folderInfo.name),
+                      mainFileName,
+                    )}`
+                  : ''
+              }${
+                hasService
+                  ? ` ${getServiceLink(
+                      path.join(parentsPath, folderInfo.name),
+                      mainFileName,
+                    )}`
+                  : ''
               }${
                 hasTest
                   ? ` ${getTestLink(
-                      path.join(folderInfo.base, folderInfo.name),
+                      folderInfo.base,
+                      node[folderInfo.name].index.name,
+                      node[folderInfo.name],
+                    )}`
+                  : ''
+              }${
+                hasQA
+                  ? ` ${getQALink(
+                      folderInfo.base,
                       node[folderInfo.name].index.name,
                       node[folderInfo.name],
                     )}`
@@ -429,8 +513,8 @@ const writeRootReadme = () => {
           parentsPath,
           mainFileName + '.md',
         )}${hasCode ? ` ${getCodeLink(parentsPath, mainFileName, node)}` : ''}${
-          hasVisual ? ` ${getVisualLink(mainFileName)}` : ''
-        }${hasService ? ` ${getServiceLink(mainFileName)}` : ''}${
+          hasVisual ? ` ${getVisualLink(parentsPath, mainFileName)}` : ''
+        }${hasService ? ` ${getServiceLink(parentsPath, mainFileName)}` : ''}${
           hasTest ? ` ${getTestLink(parentsPath, mainFileName, node)}` : ''
         }\n`,
         {

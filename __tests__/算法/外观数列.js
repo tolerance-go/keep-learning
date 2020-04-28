@@ -1,4 +1,4 @@
-const countAndSay = require("../../src/算法/外观数列");
+const countAndSay = require("../../src/数据结构和算法/外观数列");
 
 test(`countAndSay(24)`, () => {
   expect(countAndSay(24)).toStrictEqual(

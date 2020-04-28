@@ -1,4 +1,4 @@
-const addTwoNumbers = require('../../src/算法/两数相加');
+const addTwoNumbers = require('../../src/数据结构和算法/两数相加');
 const { getListNums: getNodeList } = require('../../utils/utils');
 
 test('addTwoNumbers', () => {

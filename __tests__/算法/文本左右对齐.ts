@@ -1,4 +1,4 @@
-import fullJustify from 'src/算法/文本左右对齐';
+import fullJustify from 'src/数据结构和算法/文本左右对齐';
 
 test(`fullJustify(
   ['This', 'is', 'an', 'example', 'of', 'text', 'justification.'],

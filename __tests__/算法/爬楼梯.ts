@@ -1,4 +1,4 @@
-import climbStairs from 'src/算法/动态规划/爬楼梯';
+import climbStairs from 'src/数据结构和算法/动态规划/爬楼梯';
 
 test('climbStairs(20)', () => {
   expect(climbStairs(20)).toStrictEqual(10946);

@@ -1,4 +1,4 @@
-const removeNthFromEnd = require('../../src/算法/删除链表的倒数第N个节点');
+const removeNthFromEnd = require('../../src/数据结构和算法/删除链表的倒数第N个节点');
 const { getListNums: getNodeList } = require('../../utils/utils');
 
 test('removeNthFromEnd([1,2,3,4,5], 2])', () => {

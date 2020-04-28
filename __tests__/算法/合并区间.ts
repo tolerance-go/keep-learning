@@ -1,4 +1,4 @@
-import merge from 'src/算法/合并区间';
+import merge from 'src/数据结构和算法/合并区间';
 
 test(`merge([
   [1, 3],

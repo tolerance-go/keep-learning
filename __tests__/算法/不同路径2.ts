@@ -1,4 +1,4 @@
-import uniquePathsWithObstacles from '../../src/算法/动态规划/不同路径2';
+import uniquePathsWithObstacles from '../../src/数据结构和算法/动态规划/不同路径2';
 
 test(`uniquePathsWithObstacles([
   [0, 0, 0],

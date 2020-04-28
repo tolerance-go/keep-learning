@@ -1,4 +1,4 @@
-import rotate from 'src/算法/旋转图像';
+import rotate from 'src/数据结构和算法/旋转图像';
 
 test(`rotate([
   [1, 2, 3],

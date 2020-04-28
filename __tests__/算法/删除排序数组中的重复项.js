@@ -1,4 +1,4 @@
-const removeDuplicates = require('../../src/算法/双指针/删除排序数组中的重复项');
+const removeDuplicates = require('../../src/数据结构和算法/双指针/删除排序数组中的重复项');
 const { getListNums: getNodeList } = require('../../utils/utils');
 
 test('removeDuplicates([1,1,2])', () => {

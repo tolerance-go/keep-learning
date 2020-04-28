@@ -1,4 +1,4 @@
-import myPow from 'src/算法/Pow(x,n)';
+import myPow from 'src/数据结构和算法/Pow(x,n)';
 
 test(`myPow(2.0, 10)`, () => {
   expect(myPow(2.0, 10)).toStrictEqual(1024.0);

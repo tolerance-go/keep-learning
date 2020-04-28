@@ -1,4 +1,4 @@
-import rotateRight from 'src/算法/旋转链表';
+import rotateRight from 'src/数据结构和算法/旋转链表';
 import { getListNums } from 'utils/utils';
 
 test(`rotateRight([1, 2, 3, 4, 5], 2)`, () => {

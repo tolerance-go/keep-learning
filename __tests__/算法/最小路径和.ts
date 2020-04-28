@@ -1,4 +1,4 @@
-import minPathSum from 'src/算法/动态规划/最小路径和';
+import minPathSum from 'src/数据结构和算法/动态规划/最小路径和';
 
 test(`minPathSum([
   [1, 3, 1],

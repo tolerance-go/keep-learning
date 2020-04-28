@@ -1,4 +1,4 @@
-import setZeroes from 'src/算法/矩阵置零';
+import setZeroes from 'src/数据结构和算法/矩阵置零';
 
 test(`[
   [1, 1, 1],

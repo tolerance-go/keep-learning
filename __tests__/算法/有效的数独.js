@@ -1,4 +1,4 @@
-const isValidSudoku = require('../../src/算法/有效的数独');
+const isValidSudoku = require('../../src/数据结构和算法/有效的数独');
 
 test(`isValidSudoku(
   [

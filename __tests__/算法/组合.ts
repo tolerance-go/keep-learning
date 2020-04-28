@@ -1,4 +1,4 @@
-import combine from 'src/算法/回溯/组合';
+import combine from 'src/数据结构和算法/回溯/组合';
 
 test(`combine(4, 2)`, () => {
   expect(combine(4, 2)).toStrictEqual([

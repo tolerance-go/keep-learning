@@ -1,4 +1,4 @@
-import sortColors from 'src/算法/二分查找/搜索二维矩阵';
+import sortColors from 'src/数据结构和算法/二分查找/搜索二维矩阵';
 
 test(`sortColors(
   [

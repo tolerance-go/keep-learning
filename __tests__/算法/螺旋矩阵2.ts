@@ -1,4 +1,4 @@
-import generateMatrix from 'src/算法/螺旋矩阵2';
+import generateMatrix from 'src/数据结构和算法/螺旋矩阵2';
 
 test(`generateMatrix(3)`, () => {
   expect(generateMatrix(3)).toStrictEqual([
